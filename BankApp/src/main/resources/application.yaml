@@ -1,8 +1,10 @@
 spring:
+  main:
+    banner-mode: off
   datasource:
     url: jdbc:mysql://localhost:3306/BankAppBase
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password:
+    password: 611EternitySQL1965694
   jpa:
     defer-datasource-initialization: false
     open-in-view: false
