@@ -2,9 +2,7 @@ package com.example.bankapp.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -24,19 +22,29 @@ public class Manager {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
+
     @Column(name = "first_name")
     private String firstName;
+
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "manager_status")
+
+    @Column(name = "manager_status") // // ЕНАМ!!!
     private int status;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
     @OneToMany(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY) // many потому что лист
     @JoinColumn(name = "clients_list", referencedColumnName = "id")
     private List<Client> clients;
+
+    @OneToOne(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY) // CHANGE OTHER CLASS
+    @JoinColumn(name = "managers_account", referencedColumnName = "id")
+    private WorkerAccount account;
 
     @Override
     public boolean equals(Object o) {

@@ -1,0 +1,17 @@
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    url: ${spring.datasource.url}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  jpa:
+    defer-datasource-initialization: false
+    open-in-view: false
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.MySQL57Dialect
+  liquibase:
+    change-log: db/changeLog/changes/changelog-master.xml
