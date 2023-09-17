@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="create sequence for UUID generator" author="m.egorov">
+        <createSequence sequenceName="seq_for_uuid_generator"
+                        startValue="1" <!-- Начальное значение последовательности -->
+        incrementBy="1" <!-- Значение, на которое увеличивается последовательность с каждым новым значением -->
+        minValue="1"   <!-- Минимальное значение последовательности -->
+        cycle="true"/>  <!-- Флаг зацикливания -->
+
+        <!-- В этом примере указаны атрибуты startValue, incrementBy, minValue и cycle для настройки параметров последовательности. -->
+    </changeSet>
+</databaseChangeLog>
