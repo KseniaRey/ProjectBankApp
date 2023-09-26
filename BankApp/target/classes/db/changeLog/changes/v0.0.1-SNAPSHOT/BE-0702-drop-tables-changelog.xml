@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--  Users -->
+    <changeSet author="o.sardonikova" id="drop users table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="users"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="users"/>
+        </rollback>
+    </changeSet>
+
+    <!--  Products -->
+    <changeSet author="o.sardonikova" id="drop products table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="products"/>
+        </preConditions>
+        <rollback>
+                <dropTable tableName="products"/>
+        </rollback>
+    </changeSet>
+
+    <!--  Accounts -->
+    <changeSet author="o.sardonikova" id="drop accounts table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="accounts"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="accounts"/>
+        </rollback>
+    </changeSet>
+
+    <!--  Agreements -->
+    <changeSet author="o.sardonikova" id="drop agreements table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="agreements"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="agreements"/>
+        </rollback>
+    </changeSet>
+
+    <!--  Transactions -->
+    <changeSet author="o.sardonikova" id="drop transactions table">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="transactions"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="transactions"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
