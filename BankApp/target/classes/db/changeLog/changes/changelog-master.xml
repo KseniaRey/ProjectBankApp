@@ -6,13 +6,6 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="create sequence for UUID generator" author="m.egorov">
-        <createSequence sequenceName="seq_for_uuid_generator"
-                        startValue="1" <!-- Начальное значение последовательности -->
-        incrementBy="1" <!-- Значение, на которое увеличивается последовательность с каждым новым значением -->
-        minValue="1"   <!-- Минимальное значение последовательности -->
-        cycle="true"/>  <!-- Флаг зацикливания -->
+    <include file="db/changeLog/changes/v0.0.1-SNAPSHOT/v0.0.1-master.xml"/>
 
-        <!-- В этом примере указаны атрибуты startValue, incrementBy, minValue и cycle для настройки параметров последовательности. -->
-    </changeSet>
 </databaseChangeLog>

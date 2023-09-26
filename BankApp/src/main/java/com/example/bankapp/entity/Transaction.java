@@ -1,8 +1,10 @@
 package com.example.bankapp.entity;
 
+import com.example.bankapp.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
@@ -16,7 +18,6 @@ import java.util.UUID;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-//    @GenericGenerator(name = "UUID", strategy = GenerationType.AUTO)
     @Column(name = "id")
     private UUID id;
 
@@ -28,13 +29,14 @@ public class Transaction {
     @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
     private Account creditAccount;
 
-    @Column(name = "transaction_type")
-    private int type;
+    @Column(name = "transaction_type") // enum
+    @Enumerated(EnumType.STRING)
+    private TransactionType type;
 
     @Column(name = "transaction_amount")
-    private double amount;
+    private BigDecimal amount;
 
-    @Column(name = "description")
+    @Column(name = "transaction_description")
     private String description;
 
     @Column(name = "created_at")

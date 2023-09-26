@@ -1,13 +1,15 @@
 package com.example.bankapp.entity;
 
-import com.example.bankapp.enums.AccountStatus;
 import com.example.bankapp.enums.AccountType;
 import com.example.bankapp.enums.Currency;
+import com.example.bankapp.enums.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
@@ -27,22 +29,22 @@ public class Account {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "client_id")
-    private UUID clientId;
-
     @Column(name = "account_name")
     private String name;
 
     @Column(name = "account_type")
+    @Enumerated(EnumType.STRING)
     private AccountType type;
 
-    @Column(name = "account_status") // ЕНАМ!!!
-    private AccountStatus status;
+    @Column(name = "account_status")
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @Column(name = "account_balance")
     private BigDecimal balance;
 
-    @Column(name = "currency_code") // ЕНАМ!!!
+    @Column(name = "currency_code")
+    @Enumerated(EnumType.STRING)
     private Currency currencyCode;
 
     @Column(name = "created_at")
@@ -50,34 +52,34 @@ public class Account {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id", referencedColumnName = "id")
+    private User client;
 
-    @OneToOne(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "client_account", referencedColumnName = "id")
-    private Client client;
-
-    @OneToMany(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "agreementsList", referencedColumnName = "id") // проверить правильно ли по  акк айди
-    // вот тут вопрос - пришлось заменить на айди потому что была ошибка, но по какому айди он сейчас проверяет?
-    private Set<Agreement> agreementList;
-
-    @OneToMany(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-    private Set<Transaction> debit_transaction;
-
-    @OneToMany(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-    private Set<Transaction> credit_transaction;
-
-    // если мы создаем связь от акк к транзакции 1->..., то как в транзакции показать? По 2 полям ...->1?
-    // ну и зачем нам тогда аккаунт в транзакции, блин?!
+    @OneToMany(
+            mappedBy = "debitAccount",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JsonIgnore
+    private Set<Transaction> debitTransactions = new HashSet<>();
+    @JsonIgnore
+    @OneToMany(mappedBy = "creditAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Transaction> creditTransactions = new HashSet<>();
+    @JsonIgnore
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Agreement agreement;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Account account)) return false;
-        return Objects.equals(id, account.id) && Objects.equals(clientId, account.clientId);
+        return Objects.equals(id, account.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, clientId);
+        return Objects.hash(id);
     }
 }

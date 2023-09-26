@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="o.sardonikova" id="insert test data into users table">
+        <insert tableName="users">
+            <column name="id" valueComputed="UUID_TO_BIN('c67bfe33-e779-4d0e-81a3-8e6f1870d601')"/>
+            <column name="status" value="NEW"/>
+            <column name="tax_code" value="1234567890"/>
+            <column name="first_name" value="Alice"/>
+            <column name="last_name" value="Smith"/>
+            <column name="email" value="alice@example.com"/>
+            <column name="password" value="password123"/>
+            <column name="address" value="123 Main St"/>
+            <column name="phone" value="555-123-4567"/>
+            <column name="user_role" value="CUSTOMER"/>
+            <column name="created_at" value="2023-09-17 12:00:00"/>
+            <column name="updated_at" value="2023-09-17 12:00:00"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="o.sardonikova" id="insert test data into products table">
+        <insert tableName="products">
+            <column name="id" value="1"/>
+            <column name="product_name" value="Mortgage"/>
+            <column name="product_status" value="ACTIVE"/>
+            <column name="product_currency_code" value="USD"/>
+            <column name="interest_rate" value="3.5"/>
+            <column name="product_limit" value="100000"/>
+            <column name="created_at" value="2023-09-17 12:00:00"/>
+            <column name="updated_at" value="2023-09-17 12:00:00"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="o.sardonikova" id="insert test data into accounts table">
+        <insert tableName="accounts">
+            <column name="id" valueComputed="UUID_TO_BIN('a16b4e7d-8a29-4327-b79c-4f6b21410d12')"/>
+            <column name="account_name" value="Savings Account"/>
+            <column name="account_type" value="Savings"/>
+            <column name="account_status" value="Active"/>
+            <column name="account_balance" value="5000.00"/>
+            <column name="currency_code" value="USD"/>
+            <column name="created_at" value="2023-09-17 12:00:00"/>
+            <column name="updated_at" value="2023-09-17 12:00:00"/>
+            <column name="client_id" valueComputed="UUID_TO_BIN('c67bfe33-e779-4d0e-81a3-8e6f1870d601')"/> <!-- Связь с пользователем -->
+        </insert>
+    </changeSet>
+
+    <changeSet author="o.sardonikova" id="insert test data into agreements table">
+        <insert tableName="agreements">
+            <column name="id" value="101"/>
+            <column name="account_id" valueComputed="UUID_TO_BIN('a16b4e7d-8a29-4327-b79c-4f6b21410d12')"/> <!-- Связь с счетом -->
+            <column name="product_id" value="1"/> <!-- Связь с продуктом -->
+            <column name="manager_id" valueComputed="UUID_TO_BIN('c67bfe33-e779-4d0e-81a3-8e6f1870d601')"/> <!-- Связь с пользователем -->
+            <column name="interest_rate" value="3.5"/>
+            <column name="status" value="Active"/>
+            <column name="sum" value="100000.00"/>
+            <column name="created_at" value="2023-09-17 12:00:00"/>
+            <column name="updated_at" value="2023-09-17 12:00:00"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="o.sardonikova" id="insert test data into transactions table">
+        <insert tableName="transactions">
+            <column name="id" value="1001"/>
+            <column name="debit_account_id" valueComputed="UUID_TO_BIN('a16b4e7d-8a29-4327-b79c-4f6b21410d12')"/> <!-- Связь с счетом -->
+            <column name="credit_account_id" valueComputed="UUID_TO_BIN('a16b4e7d-8a29-4327-b79c-4f6b21410d12')"/> <!-- Связь с счетом -->
+            <column name="transaction_type" value="Transfer"/>
+            <column name="transaction_amount" value="500.00"/>
+            <column name="transaction_description" value="Transfer from Savings to Checking"/>
+            <column name="created_at" value="2023-09-17 12:00:00"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

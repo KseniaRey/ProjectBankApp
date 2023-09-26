@@ -1,11 +1,16 @@
 package com.example.bankapp.entity;
 
+import com.example.bankapp.enums.Currency;
+import com.example.bankapp.enums.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import static jakarta.persistence.CascadeType.*;
 
@@ -20,25 +25,24 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
-
-    @Column(name = "manager_id")
-    private int managerId; // убрать связь с менеджером - тут убрать?
+    private Integer id;
 
     @Column(name = "product_name")
     private String name;
 
     @Column(name = "product_status")
-    private int status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @Column(name = "product_currency_code")
-    private int currencyCode;
+    @Enumerated(EnumType.STRING)
+    private Currency currencyCode;
 
     @Column(name = "interest_rate")
     private BigDecimal interestRate;
 
     @Column(name = "product_limit")
-    private int limit;
+    private Integer limit;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -46,17 +50,10 @@ public class Product {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @OneToOne(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "credit_id", referencedColumnName = "id")
-    private Manager manager;
+    @JsonIgnore
+    @OneToMany(mappedBy = "productId", cascade = ALL, fetch = FetchType.LAZY)
+    private Set<Agreement> agreements = new HashSet<>();
 
-    @ManyToOne(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_agreement", referencedColumnName = "product_id")
-    private Agreement agreement;
-//    @ManyToOne(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "client", referencedColumnName = "id")
-//    private Client client;
-    // -- нужно ли нам вот это - закомментированное? Зачем нам экз клиента в продукте? По идее нет, но можем ли мы строить связь в одну сторону?
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

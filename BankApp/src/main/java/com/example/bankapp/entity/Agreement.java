@@ -1,5 +1,6 @@
 package com.example.bankapp.entity;
 
+import com.example.bankapp.enums.AgreementStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,22 +24,29 @@ public class Agreement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
-    @Column(name = "account_id") // у нас уже есть такая колонка в другой таблице - норм же?
-    private UUID accountId; // UUID или Integer?
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_id", referencedColumnName = "id")
+    private Account account;
 
-    @Column(name = "product_id")
-    private int productId;
+    @ManyToOne(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    private Product productId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "manager_id", referencedColumnName = "id")
+    private User manager;
 
     @Column(name = "interest_rate")
     private double interestRate;
 
     @Column(name = "status")
-    private int status;
+    @Enumerated(EnumType.STRING)
+    private AgreementStatus status; // Enum
 
     @Column(name = "sum")
-    private BigDecimal sum; // сумма чего и нужен ли нам биг децимал?
+    private BigDecimal sum;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -46,24 +54,16 @@ public class Agreement {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @ManyToOne(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "agreementsList", referencedColumnName = "id")
-    private Account account; // в одном аккаунте может быть несколько договоров (на разные услуги - кредит, ипотека и тд)
-
-    @OneToMany(cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "productList", referencedColumnName = "id")
-    private List<Product> productList;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Agreement agreement)) return false;
-        return id == agreement.id && productId == agreement.productId && Objects.equals(accountId, agreement.accountId);
+        return Objects.equals(id, agreement.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, accountId, productId);
+        return Objects.hash(id);
     }
-
 }

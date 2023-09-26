@@ -5,10 +5,190 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-    <changeSet author="o.sardonikova" id="create products table">
-        <preConditions onFail="CONTINUE" onFailMessage="Table products already exists">
+
+    <changeSet author="o.sardonikova" id="create users table">
+        <preConditions onFail="CONTINUE" onFailMessage="Table users already exists">
             <not>
-                <tableExists tableName="products"/>
+                <tableExists tableName="users"/>
             </not>
         </preConditions>
-        <createTable tableName="products">
+        <createTable tableName="users">
+            <column name="id" type="binary(16)">
+                <constraints primaryKey="true" unique="true" nullable="false"/>
+            </column>
+            <column name="status" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tax_code" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_role" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+    </createTable>
+</changeSet>
+
+    <changeSet author="o.sardonikova" id="create products table">
+    <preConditions onFail="CONTINUE" onFailMessage="Table products already exists">
+        <not>
+            <tableExists tableName="products"/>
+        </not>
+    </preConditions>
+    <createTable tableName="products">
+        <column name="id" type="integer">
+            <constraints primaryKey="true" unique="true" nullable="false"/>
+        </column>
+        <column name="product_name" type="varchar(30)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="product_status" type="varchar(30)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="product_currency_code" type="varchar(3)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="interest_rate" type="numeric(6,4)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="product_limit" type="integer">
+            <constraints nullable="false"/>
+        </column>
+        <column name="created_at" type="timestamp">
+            <constraints nullable="false"/>
+        </column>
+        <column name="updated_at" type="timestamp">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+    </changeSet>
+
+    <changeSet author="o.sardonikova" id="create accounts table">
+    <preConditions onFail="CONTINUE" onFailMessage="Table accounts already exists">
+        <not>
+            <tableExists tableName="accounts"/>
+        </not>
+    </preConditions>
+    <createTable tableName="accounts">
+        <column name="id" type="binary(16)">
+            <constraints primaryKey="true" unique="true" nullable="false"/>
+        </column>
+        <column name="account_name" type="varchar(30)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="account_type" type="varchar(30)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="account_status" type="varchar(30)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="account_balance" type="numeric(19, 4)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="currency_code" type="varchar(3)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="created_at" type="timestamp">
+            <constraints nullable="false"/>
+        </column>
+        <column name="updated_at" type="timestamp">
+            <constraints nullable="false"/>
+        </column>
+        <column name="client_id" type="binary(16)">
+            <constraints foreignKeyName="client_id" references="users(id)" nullable="false"/>
+        </column>
+
+    </createTable>
+    </changeSet>
+
+    <changeSet author="o.sardonikova" id="create agreements table">
+    <preConditions onFail="CONTINUE" onFailMessage="Table agreements already exists">
+        <not>
+            <tableExists tableName="agreements"/>
+        </not>
+    </preConditions>
+    <createTable tableName="agreements">
+        <column name="id" type="integer">
+            <constraints primaryKey="true" unique="true" nullable="false"/>
+        </column>
+        <column name="account_id" type="binary(16)">
+            <constraints foreignKeyName="account_id" references="accounts(id)" nullable="false"/>
+        </column>
+        <column name="product_id" type="integer">
+            <constraints foreignKeyName="product_id" references="products(id)" nullable="false"/>
+        </column>
+        <column name="manager_id" type="binary(16)">
+            <constraints foreignKeyName="manager_id" references="users(id)" nullable="false"/>
+        </column>
+        <column name="interest_rate" type="numeric(6,4)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="status" type="varchar(30)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="sum" type="decimal(15,2)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="created_at" type="timestamp">
+            <constraints nullable="false"/>
+        </column>
+        <column name="updated_at" type="timestamp">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+    </changeSet>
+
+    <changeSet author="o.sardonikova" id="create transactions table">
+    <preConditions onFail="CONTINUE" onFailMessage="Table transactions already exists">
+        <not>
+            <tableExists tableName="transactions"/>
+        </not>
+    </preConditions>
+    <createTable tableName="transactions">
+        <column name="id" type="integer">
+            <constraints primaryKey="true" unique="true" nullable="false"/>
+        </column>
+        <column name="debit_account_id" type="binary(16)">
+            <constraints foreignKeyName="debit_account_id" references="accounts(id)" nullable="false"/>
+        </column>
+        <column name="credit_account_id" type="binary(16)">
+            <constraints foreignKeyName="credit_account_id" references="accounts(id)" nullable="false"/>
+        </column>
+        <column name="transaction_type" type="varchar(30)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="transaction_amount" type="decimal(12, 4)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="transaction_description" type="varchar(200)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="created_at" type="timestamp">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+    </changeSet>
+</databaseChangeLog>
