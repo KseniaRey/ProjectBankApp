@@ -11,8 +11,11 @@ spring:
     open-in-view: false
     properties:
       hibernate:
+        type: uuid-char
         ddl-auto: update
         dialect: org.hibernate.dialect.MySQL57Dialect
   liquibase:
     change-log: db/changeLog/changes/changelog-master.xml
     drop-first: true
+server:
+  port: 8080

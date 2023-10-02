@@ -5,5 +5,5 @@ import com.example.bankapp.entity.Agreement;
 import java.util.UUID;
 
 public interface AgreementService {
-    Agreement updateById(UUID id);
+    Agreement updateById(UUID id, Agreement updatedAgreement);
 }

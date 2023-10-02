@@ -168,7 +168,7 @@
         </not>
     </preConditions>
     <createTable tableName="transactions">
-        <column name="id" type="integer">
+        <column name="id" type="binary(16)">
             <constraints primaryKey="true" unique="true" nullable="false"/>
         </column>
         <column name="debit_account_id" type="binary(16)">

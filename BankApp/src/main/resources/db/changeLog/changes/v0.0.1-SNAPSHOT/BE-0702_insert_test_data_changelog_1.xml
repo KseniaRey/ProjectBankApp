@@ -66,10 +66,10 @@
 
     <changeSet author="o.sardonikova" id="insert test data into transactions table">
         <insert tableName="transactions">
-            <column name="id" value="1001"/>
+            <column name="id" valueComputed="UUID_TO_BIN('01fd4094-d09a-473d-a389-728abda7d813')"/>
             <column name="debit_account_id" valueComputed="UUID_TO_BIN('a16b4e7d-8a29-4327-b79c-4f6b21410d12')"/> <!-- Связь с счетом -->
             <column name="credit_account_id" valueComputed="UUID_TO_BIN('a16b4e7d-8a29-4327-b79c-4f6b21410d12')"/> <!-- Связь с счетом -->
-            <column name="transaction_type" value="Transfer"/>
+            <column name="transaction_type" value="TRANSFER"/>
             <column name="transaction_amount" value="500.00"/>
             <column name="transaction_description" value="Transfer from Savings to Checking"/>
             <column name="created_at" value="2023-09-17 12:00:00"/>

@@ -16,7 +16,7 @@ public class AgreementController {
     }
 
     @PutMapping ("/{id}")
-    public Agreement updateAgreement(@PathVariable(name = "id") UUID id){
-        return agreementService.updateById(id);
+    public Agreement updateAgreementById(@PathVariable UUID id, @RequestBody Agreement updatedAgreement){
+        return agreementService.updateById(id, updatedAgreement);
     }
 }

@@ -16,7 +16,7 @@ public class ProductController {
         this.productService = productService;
     }
     @GetMapping("/{id}")
-    private Product getProductById(@PathVariable(name = "id") int id){
-    return productService.getById(id);
+    private Product getProductById(@PathVariable(name = "id") int productId){
+    return productService.getById(productId);
     }
 }
