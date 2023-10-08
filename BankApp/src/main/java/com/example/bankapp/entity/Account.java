@@ -22,7 +22,7 @@ import static jakarta.persistence.CascadeType.*;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString
+//@ToString
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

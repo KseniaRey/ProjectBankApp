@@ -131,7 +131,7 @@
         </not>
     </preConditions>
     <createTable tableName="agreements">
-        <column name="id" type="integer">
+        <column name="id" type="binary(16)">
             <constraints primaryKey="true" unique="true" nullable="false"/>
         </column>
         <column name="account_id" type="binary(16)">

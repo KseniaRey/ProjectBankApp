@@ -18,7 +18,7 @@ import static jakarta.persistence.CascadeType.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
+//@ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -60,10 +60,10 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "client", cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "client", cascade = ALL, fetch = FetchType.LAZY)
     private Set<Account> clientAccount;
 
-    @OneToMany(mappedBy = "manager", cascade = {MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "manager", cascade = ALL, fetch = FetchType.LAZY)
     private Set<Agreement> managerAgreements;
 
     @Override

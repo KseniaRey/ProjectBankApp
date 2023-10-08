@@ -40,8 +40,8 @@
         <insert tableName="accounts">
             <column name="id" valueComputed="UUID_TO_BIN('a16b4e7d-8a29-4327-b79c-4f6b21410d12')"/>
             <column name="account_name" value="Savings Account"/>
-            <column name="account_type" value="Savings"/>
-            <column name="account_status" value="Active"/>
+            <column name="account_type" value="TRAVEL"/>
+            <column name="account_status" value="ACTIVE"/>
             <column name="account_balance" value="5000.00"/>
             <column name="currency_code" value="USD"/>
             <column name="created_at" value="2023-09-17 12:00:00"/>
@@ -52,12 +52,12 @@
 
     <changeSet author="o.sardonikova" id="insert test data into agreements table">
         <insert tableName="agreements">
-            <column name="id" value="101"/>
+            <column name="id" valueComputed="UUID_TO_BIN('6cf469b4-a094-47c2-bfd2-3c3bf4742436')"/>
             <column name="account_id" valueComputed="UUID_TO_BIN('a16b4e7d-8a29-4327-b79c-4f6b21410d12')"/> <!-- Связь с счетом -->
             <column name="product_id" value="1"/> <!-- Связь с продуктом -->
             <column name="manager_id" valueComputed="UUID_TO_BIN('c67bfe33-e779-4d0e-81a3-8e6f1870d601')"/> <!-- Связь с пользователем -->
             <column name="interest_rate" value="3.5"/>
-            <column name="status" value="Active"/>
+            <column name="status" value="ACTIVE"/>
             <column name="sum" value="100000.00"/>
             <column name="created_at" value="2023-09-17 12:00:00"/>
             <column name="updated_at" value="2023-09-17 12:00:00"/>

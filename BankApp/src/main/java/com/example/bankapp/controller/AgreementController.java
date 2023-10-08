@@ -2,6 +2,7 @@ package com.example.bankapp.controller;
 
 import com.example.bankapp.entity.Agreement;
 import com.example.bankapp.service.AgreementService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -16,7 +17,8 @@ public class AgreementController {
     }
 
     @PutMapping ("/{id}")
-    public Agreement updateAgreementById(@PathVariable UUID id, @RequestBody Agreement updatedAgreement){
-        return agreementService.updateById(id, updatedAgreement);
+    public ResponseEntity<String> updateAgreementById(@PathVariable UUID id, @RequestBody Agreement updatedAgreement){
+      agreementService.updateById(id, updatedAgreement);
+        return ResponseEntity.ok("Entity with id: " + id + " updated");
     }
 }
