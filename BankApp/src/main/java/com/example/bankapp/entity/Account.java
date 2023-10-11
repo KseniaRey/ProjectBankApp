@@ -57,11 +57,7 @@ public class Account {
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     private User client;
 
-    @OneToMany(
-            mappedBy = "debitAccount",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
+    @OneToMany(mappedBy = "debitAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Transaction> debitTransactions = new HashSet<>();
     @JsonIgnore
