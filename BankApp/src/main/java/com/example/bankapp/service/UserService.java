@@ -7,4 +7,5 @@ import java.util.UUID;
 public interface UserService {
     @Transactional
     void deleteById(UUID id);
+
 }

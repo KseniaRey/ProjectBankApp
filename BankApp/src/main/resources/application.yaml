@@ -13,7 +13,7 @@ spring:
       hibernate:
         type: uuid-char
         ddl-auto: update
-        dialect: org.hibernate.dialect.MySQL57Dialect
+        dialect: org.hibernate.dialect.MySQLDialect
   liquibase:
     change-log: db/changeLog/changes/changelog-master.xml
     drop-first: true

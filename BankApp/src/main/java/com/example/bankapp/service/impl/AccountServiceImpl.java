@@ -32,7 +32,7 @@ public class AccountServiceImpl implements AccountService {
         account.setName(accountDto.getName());
         account.setType(AccountType.valueOf(accountDto.getType()));
         account.setStatus(Status.valueOf(accountDto.getStatus()));
-        account.setBalance(BigDecimal.valueOf(accountDto.getBalance()));
+        account.setBalance(BigDecimal.valueOf(Long.parseLong(accountDto.getBalance())));
         account.setCurrencyCode(Currency.valueOf(accountDto.getCurrencyCode()));
         account.setCreatedAt(LocalDateTime.now());
         account.setUpdatedAt(LocalDateTime.now());

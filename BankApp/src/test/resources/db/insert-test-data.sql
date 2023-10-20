@@ -1,0 +1,2 @@
+INSERT INTO users (id, user_role, status, tax_code, password, first_name, last_name, email, address, phone, created_at, updated_at)
+values ('c586e826-f384-4c06-b00e-75ff679e732f', 'CUSTOMER', 'NEW', '1234567890', 'password123', 'Amisha', 'Smith', 'alice@example.com', '123 Main St', '555-123-4567', '2023-09-17 12:00:00', '2023-09-17 12:00:00');

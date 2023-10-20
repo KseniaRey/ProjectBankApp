@@ -10,7 +10,7 @@ public class AccountDto {
     private String name;
     private String type;
     private String status;
-    private Double balance;
+    private String balance;
     private String currencyCode;
     private String clientId;
 }
