@@ -20,7 +20,7 @@ public class                                                                    
         return transactionService.getTransactionByType(type);
     }
     @PostMapping("/create")
-    public Transaction createTransaction(@RequestBody TransactionDto transactionDto){
+    public TransactionDto createTransaction(@RequestBody TransactionDto transactionDto){
         return transactionService.createTransaction(transactionDto);
     }
 }

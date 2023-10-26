@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -36,21 +37,38 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public Transaction createTransaction(TransactionDto transactionDto) {
-    Transaction transaction = new Transaction();
-
-    String debitAccountId = transactionDto.getDebitAccountId();
-    Account debitAccount = accountRepository.findById(UUID.fromString(debitAccountId)).orElse(null);
-    if (debitAccount == null){
-        throw new RuntimeException("Debit Account is null");
+    @Transactional
+    public TransactionDto createTransaction(TransactionDto transactionDto) {
+        Transaction transaction = transactionMapper.toTransactionEntity(transactionDto); // получаем объект транзакции с методами, которые прописывали в маппере
+        Account debitAccount = updateDebitAccount(transactionDto, transaction);
+        Account creditAccount = updateCreditAccount(transactionDto, transaction);
+        transaction.setDebitAccount(debitAccount);
+        transaction.setCreditAccount(creditAccount);
+        transaction.setCreatedAt(LocalDateTime.now());
+        transactionRepository.save(transaction);
+        return transactionMapper.toTransactionDto(transaction);
     }
-    String creditAccountId = transactionDto.getCreditAccountId();
-    Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId)).orElse(null);
-    transaction.setDebitAccount(debitAccount);
-    transaction.setCreditAccount(creditAccount);
-    transaction.setType(TransactionType.valueOf(transactionDto.getType())); // какой тип создастся?
-    transaction.setAmount(new BigDecimal(transactionDto.getAmount()));
-    transaction.setDescription(transactionDto.getDescription());
-    return transaction;
+// избавиться от повторяющегося кода в методах внизу - 23.10.23
+    private Account updateCreditAccount(TransactionDto transactionDto, Transaction transaction) {
+        String creditAccountId = transactionDto.getCreditAccountId();
+        Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId)).orElseThrow(() -> new RuntimeException("Credit Account is null"));
+        BigDecimal creditBalance = creditAccount.getBalance().add(transaction.getAmount());
+        creditAccount.setBalance(creditBalance);
+        creditAccount.setUpdatedAt(LocalDateTime.now()); // задаем время обновления
+        accountRepository.save(creditAccount);
+        return creditAccount;
+    }
+
+    private Account updateDebitAccount(TransactionDto transactionDto, Transaction transaction) {
+        String debitAccountId = transactionDto.getDebitAccountId();
+        Account debitAccount = accountRepository.findById(UUID.fromString(debitAccountId)).orElseThrow(() -> new RuntimeException("Debit Account is null"));
+        if (debitAccount.getBalance().compareTo(transaction.getAmount()) < 0) {
+            throw new RuntimeException("Not enough money");
+        }
+        BigDecimal debitBalance = debitAccount.getBalance().subtract(transaction.getAmount());
+        debitAccount.setBalance(debitBalance);
+        debitAccount.setUpdatedAt(LocalDateTime.now());
+        accountRepository.save(debitAccount);
+        return debitAccount;
     }
 }

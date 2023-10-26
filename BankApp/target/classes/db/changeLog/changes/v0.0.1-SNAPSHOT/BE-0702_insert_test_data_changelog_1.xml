@@ -48,6 +48,17 @@
             <column name="updated_at" value="2023-09-17 12:00:00"/>
             <column name="client_id" valueComputed="UUID_TO_BIN('c67bfe33-e779-4d0e-81a3-8e6f1870d601')"/> <!-- Связь с пользователем -->
         </insert>
+        <insert tableName="accounts">
+            <column name="id" valueComputed="UUID_TO_BIN('2442b573-307c-4f39-994e-5bb359745cba')"/>
+            <column name="account_name" value="Savings Account"/>
+            <column name="account_type" value="TRAVEL"/>
+            <column name="account_status" value="ACTIVE"/>
+            <column name="account_balance" value="5000.00"/>
+            <column name="currency_code" value="USD"/>
+            <column name="created_at" value="2023-09-17 12:00:00"/>
+            <column name="updated_at" value="2023-09-17 12:00:00"/>
+            <column name="client_id" valueComputed="UUID_TO_BIN('c67bfe33-e779-4d0e-81a3-8e6f1870d601')"/> <!-- Связь с пользователем -->
+        </insert>
     </changeSet>
 
     <changeSet author="o.sardonikova" id="insert test data into agreements table">

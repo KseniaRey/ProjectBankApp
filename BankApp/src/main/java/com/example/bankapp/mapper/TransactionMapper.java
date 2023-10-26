@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,20 +20,27 @@ public interface TransactionMapper {
     @Mapping(source = "creditAccount.id", target = "creditAccountId", qualifiedByName = "uuidToString")
     TransactionDto toTransactionDto(Transaction transaction);
 
+    @Mapping(source = "amount", target = "amount", qualifiedByName = "stringToBigDecimal")
+    @Mapping(source = "type", target = "type", qualifiedByName = "stringToEnumValue")
+        // на случай если в стринге передаем не тем кейсом
+    Transaction toTransactionEntity(TransactionDto transactionDto);
 
-// При попытке внести вот это изменение, класс TransactionMapperImpl хочет, чтобы я оверрайднула новый метод. Если я это делаю,
-    // появляется сообщение this class can not be changed. -> как решить?
-//    @Named("toTransaction")
-//    @Mapping(source = "debitAccountId", target = "debitAccount", qualifiedByName = "stringToUuid")
-//    @Mapping(source = "creditAccountId", target = "creditAccount", qualifiedByName = "stringToUuid")
-//    Transaction toTransaction(TransactionDto transactionDto);
-
-    @IterableMapping(qualifiedByName = "toTransactionDto") // к каждому элементу листа примени этот метод
+    @IterableMapping(qualifiedByName = "toTransactionDto")
+        // к каждому элементу листа примени этот метод
     List<TransactionDto> transactonsToTransactionsDTO(List<Transaction> transactions); // list of dtos
+
     @Named("uuidToString")
-    default String uuidToString (UUID uuid){
+    default String uuidToString(UUID uuid) {
         return uuid.toString();
     }
 
+    @Named("stringToBigDecimal")
+    default BigDecimal stringToBigDecimal(String s) {
+        return new BigDecimal(s);
+    }
 
+    @Named("stringToEnumValue")
+    default String stringToEnumValue(String s) {
+        return s.toUpperCase().replaceAll("\\s", "_");
+    }
 }

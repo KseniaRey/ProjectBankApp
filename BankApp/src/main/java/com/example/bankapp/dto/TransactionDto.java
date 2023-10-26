@@ -11,7 +11,6 @@ public class TransactionDto {
     private String type;
     private String amount;
     private String description;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private String createdAt;
 
 }
