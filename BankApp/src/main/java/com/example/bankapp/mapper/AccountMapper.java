@@ -2,6 +2,8 @@ package com.example.bankapp.mapper;
 
 import com.example.bankapp.dto.AccountDto;
 import com.example.bankapp.entity.Account;
+import com.example.bankapp.entity.User;
+import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
@@ -12,24 +14,21 @@ import java.util.UUID;
 
 @Mapper(componentModel = "spring")
 public interface AccountMapper {
+    @Named("toAccountDto")
     @Mapping(source = "client.id", target = "clientId")
     @Mapping(source = "id", target = "id")
+    @Mapping(source = "agreement.product.name", target = "productName")
+    @Mapping(source = "client", target = "ownerFullName", qualifiedByName = "getFullName")
     AccountDto toAccountDto(Account account);
 
+    @IterableMapping(qualifiedByName = "toAccountDto")
     List<AccountDto> accountsToAccountDto(List<Account> accounts);
-
-    @Mapping(source = "name", target = "name")
+    @Named("toAccountEntity")
     @Mapping(source = "type", target = "type", qualifiedByName = "stringToEnumValue")
-    @Mapping(source = "status", target = "status")
+    @Mapping(source = "status", target = "status", qualifiedByName = "stringToEnumValue")
     @Mapping(source = "balance", target = "balance", qualifiedByName = "stringToBigDecimal")
     @Mapping(source = "currencyCode", target = "currencyCode", qualifiedByName = "stringToEnumValue")
-//    @Mapping(source = "id", target = "client", qualifiedByName = "stringToUuid") // с этим все ломается
     Account toAccountEntity(AccountDto accountDto);
-
-//    @Named("stringToUuid")
-//    default UUID stringToUuid(String clientId) {
-//        return UUID.fromString(clientId);
-//    }
 
     @Named("stringToEnumValue") // дублирование кода из transactionMapper - можем ли тут сделать через use чтобы использовать методы транзакшн маппера?
     default String stringToEnumValue(String s){
@@ -39,5 +38,10 @@ public interface AccountMapper {
     @Named("stringToBigDecimal")
     default BigDecimal stringToBigDecimal(String s) {
         return new BigDecimal(s);
+    }
+    
+    @Named("getFullName")
+    default String getFullName(User user){
+        return user.getFirstName() + " " + user.getLastName();
     }
 }

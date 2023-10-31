@@ -14,7 +14,7 @@
             <column name="first_name" value="Alice"/>
             <column name="last_name" value="Smith"/>
             <column name="email" value="alice@example.com"/>
-            <column name="password" value="password123"/>
+            <column name="password" value="$2a$04$f/kRo6Sp9uO4L8wxeaw1He.sgbdltPbjQNfaQYB5ZJl/9VzpZgSf2"/>
             <column name="address" value="123 Main St"/>
             <column name="phone" value="555-123-4567"/>
             <column name="user_role" value="CUSTOMER"/>

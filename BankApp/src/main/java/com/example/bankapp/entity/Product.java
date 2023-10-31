@@ -51,7 +51,7 @@ public class Product {
     private LocalDateTime updatedAt;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "productId", cascade = ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "product", cascade = ALL, fetch = FetchType.LAZY)
     private Set<Agreement> agreements = new HashSet<>();
 
     @Override

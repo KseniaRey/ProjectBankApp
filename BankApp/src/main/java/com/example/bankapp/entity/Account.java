@@ -52,6 +52,7 @@ public class Account {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id", referencedColumnName = "id")
@@ -60,9 +61,11 @@ public class Account {
     @OneToMany(mappedBy = "debitAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Transaction> debitTransactions = new HashSet<>();
+
     @JsonIgnore
     @OneToMany(mappedBy = "creditAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Transaction> creditTransactions = new HashSet<>();
+
     @JsonIgnore
     @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Agreement agreement;

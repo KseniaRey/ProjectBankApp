@@ -14,4 +14,6 @@ public class AccountDto {
     private String balance;
     private String currencyCode;
     private String clientId; // генерируется и будет передано в дто, верно же?
+    private String productName;
+    private String ownerFullName;
 }

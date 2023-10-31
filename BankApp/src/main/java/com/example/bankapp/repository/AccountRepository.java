@@ -11,6 +11,6 @@ import java.util.UUID;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, UUID> {
-    @Query("SELECT acc FROM Account acc WHERE acc.agreement.productId.name = :productName")
+    @Query("SELECT acc FROM Account acc WHERE acc.agreement.product.name = :productName")
     List<Account> getByProductName(@Param("productName") String productName);
 }

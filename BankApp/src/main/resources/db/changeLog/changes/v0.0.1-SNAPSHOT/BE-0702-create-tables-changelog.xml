@@ -31,7 +31,7 @@
             <column name="email" type="varchar(30)">
                 <constraints nullable="false"/>
             </column>
-            <column name="password" type="varchar(30)">
+            <column name="password" type="varchar(60)">
                 <constraints nullable="false"/>
             </column>
             <column name="address" type="varchar(30)">
