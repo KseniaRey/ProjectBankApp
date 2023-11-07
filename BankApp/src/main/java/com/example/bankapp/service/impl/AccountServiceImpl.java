@@ -7,6 +7,7 @@ import com.example.bankapp.mapper.AccountMapper;
 import com.example.bankapp.repository.AccountRepository;
 import com.example.bankapp.repository.UserRepository;
 import com.example.bankapp.service.AccountService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,7 +32,8 @@ public class AccountServiceImpl implements AccountService {
         Account account = accountMapper.toAccountEntity(accountDto); // дописать метод в маппере и в маппер перенести 36-41 строки
         account.setUpdatedAt(LocalDateTime.now());
         account.setCreatedAt(LocalDateTime.now());
-        User user = userRepository.findById(UUID.fromString(accountDto.getClientId())).orElse(null);
+        User user = userRepository.findById(UUID.fromString(accountDto.getClientId()))
+                .orElseThrow(()-> new EntityNotFoundException("Entity is not found"));
         account.setClient(user);
         accountRepository.save(account);
         return accountMapper.toAccountDto(account);

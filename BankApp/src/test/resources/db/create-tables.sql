@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS users
 CREATE TABLE IF NOT EXISTS products
 (
     id            INT PRIMARY KEY AUTO_INCREMENT,
-    name          varchar(70),
+    product_name          varchar(70),
     status        varchar(20),
     interest_rate decimal(6, 4),
     product_currency_code varchar(3),

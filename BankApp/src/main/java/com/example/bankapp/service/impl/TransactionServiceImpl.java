@@ -4,10 +4,12 @@ import com.example.bankapp.dto.TransactionDto;
 import com.example.bankapp.entity.Account;
 import com.example.bankapp.entity.Transaction;
 import com.example.bankapp.enums.TransactionType;
+import com.example.bankapp.exceptions.NotEnoughMoneyException;
 import com.example.bankapp.mapper.TransactionMapper;
 import com.example.bankapp.repository.AccountRepository;
 import com.example.bankapp.repository.TransactionRepository;
 import com.example.bankapp.service.TransactionService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -51,7 +53,8 @@ public class TransactionServiceImpl implements TransactionService {
 // избавиться от повторяющегося кода в методах внизу - 23.10.23
     private Account updateCreditAccount(TransactionDto transactionDto, Transaction transaction) {
         String creditAccountId = transactionDto.getCreditAccountId();
-        Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId)).orElseThrow(() -> new RuntimeException("Credit Account is null"));
+        Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId))
+                .orElseThrow(() -> new EntityNotFoundException("Account entity is not found"));
         BigDecimal creditBalance = creditAccount.getBalance().add(transaction.getAmount());
         creditAccount.setBalance(creditBalance);
         creditAccount.setUpdatedAt(LocalDateTime.now()); // задаем время обновления
@@ -61,9 +64,10 @@ public class TransactionServiceImpl implements TransactionService {
 
     private Account updateDebitAccount(TransactionDto transactionDto, Transaction transaction) {
         String debitAccountId = transactionDto.getDebitAccountId();
-        Account debitAccount = accountRepository.findById(UUID.fromString(debitAccountId)).orElseThrow(() -> new RuntimeException("Debit Account is null"));
+        Account debitAccount = accountRepository.findById(UUID.fromString(debitAccountId))
+                .orElseThrow(() -> new EntityNotFoundException("Debit Account is null"));
         if (debitAccount.getBalance().compareTo(transaction.getAmount()) < 0) {
-            throw new RuntimeException("Not enough money");
+            throw new NotEnoughMoneyException("Not enough money");
         }
         BigDecimal debitBalance = debitAccount.getBalance().subtract(transaction.getAmount());
         debitAccount.setBalance(debitBalance);

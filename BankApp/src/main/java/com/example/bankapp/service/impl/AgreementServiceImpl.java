@@ -20,16 +20,10 @@ public class AgreementServiceImpl implements AgreementService {
     @Transactional
     @Override
     public void updateById(UUID id, Agreement updatedAgreement) {
-        Agreement existingAgreement = agreementRepository.findById(id).orElse(null);
-
-        if (existingAgreement != null){
+        Agreement existingAgreement = agreementRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(id + " not found"));
             existingAgreement.setSum(updatedAgreement.getSum());
             existingAgreement.setStatus(updatedAgreement.getStatus());
             existingAgreement.setInterestRate(updatedAgreement.getInterestRate());
             existingAgreement.setUpdatedAt(LocalDateTime.now());
-
-        } else {
-            throw new EntityNotFoundException(id + " not found");
-        }
     }
 }

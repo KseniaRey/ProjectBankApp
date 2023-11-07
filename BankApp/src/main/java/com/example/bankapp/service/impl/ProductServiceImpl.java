@@ -3,6 +3,7 @@ package com.example.bankapp.service.impl;
 import com.example.bankapp.entity.Product;
 import com.example.bankapp.repository.ProductRepository;
 import com.example.bankapp.service.ProductService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +17,7 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     @Override
     public Product getById(int id) {
-        return productRepository.findById(id).orElse(null);
+        return productRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Entity is not found"));
     }
 }
