@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AgreementServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BankApp</a> &gt; <a href="index.source.html" class="el_package">com.example.bankapp.service.impl</a> &gt; <span class="el_source">AgreementServiceImpl.java</span></div><h1>AgreementServiceImpl.java</h1><pre class="source lang-java linenums">package com.example.bankapp.service.impl;
+
+import com.example.bankapp.entity.Agreement;
+import com.example.bankapp.repository.AgreementRepository;
+import com.example.bankapp.service.AgreementService;
+import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Service
+public class AgreementServiceImpl implements AgreementService {
+    private final AgreementRepository agreementRepository;
+
+<span class="fc" id="L17">    public AgreementServiceImpl(AgreementRepository agreementRepository) {</span>
+<span class="fc" id="L18">        this.agreementRepository = agreementRepository;</span>
+<span class="fc" id="L19">    }</span>
+    @Transactional
+    @Override
+    public void updateById(UUID id, Agreement updatedAgreement) {
+<span class="nc" id="L23">        Agreement existingAgreement = agreementRepository.findById(id).orElseThrow(() -&gt; new EntityNotFoundException(id + &quot; not found&quot;));</span>
+<span class="nc" id="L24">            existingAgreement.setSum(updatedAgreement.getSum());</span>
+<span class="nc" id="L25">            existingAgreement.setStatus(updatedAgreement.getStatus());</span>
+<span class="nc" id="L26">            existingAgreement.setInterestRate(updatedAgreement.getInterestRate());</span>
+<span class="nc" id="L27">            existingAgreement.setUpdatedAt(LocalDateTime.now());</span>
+<span class="nc" id="L28">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

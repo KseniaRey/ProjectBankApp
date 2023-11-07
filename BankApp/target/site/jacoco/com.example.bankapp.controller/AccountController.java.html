@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccountController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BankApp</a> &gt; <a href="index.source.html" class="el_package">com.example.bankapp.controller</a> &gt; <span class="el_source">AccountController.java</span></div><h1>AccountController.java</h1><pre class="source lang-java linenums">package com.example.bankapp.controller;
+
+import com.example.bankapp.dto.AccountDto;
+import com.example.bankapp.service.AccountService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.util.List;
+
+@RestController
+@RequestMapping(path = &quot;/account&quot;)
+public class AccountController {
+    private final AccountService accountService;
+
+<span class="fc" id="L17">    public AccountController(AccountService accountService) {</span>
+<span class="fc" id="L18">        this.accountService = accountService;</span>
+<span class="fc" id="L19">    }</span>
+    @PostMapping(&quot;/create&quot;)
+//    @PreAuthorize(&quot;hasAuthority('MANAGER')&quot;) // - для проверки работы секьюрити. Доступ только менеджеру
+    public ResponseEntity&lt;AccountDto&gt; createAccount(@RequestBody AccountDto accountDto){
+<span class="fc" id="L23">        AccountDto result = accountService.createAccount(accountDto);</span>
+<span class="fc" id="L24">        return ResponseEntity.created(URI.create(&quot;/&quot; + result.getId())).body(result);</span>
+    }
+
+    @GetMapping(&quot;/get-by-productName&quot;)
+    public List&lt;AccountDto&gt; getByProductName(@RequestParam(name = &quot;productName&quot;) String productName){
+<span class="nc" id="L29">        return accountService.getByProductName(productName);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

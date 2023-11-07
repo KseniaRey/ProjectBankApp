@@ -1,0 +1,845 @@
+2023-10-26T12:59:12.493+02:00  INFO 9796 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 9796 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-10-26T12:59:12.496+02:00  INFO 9796 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-10-26T12:59:12.851+02:00  INFO 9796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26T12:59:12.901+02:00  INFO 9796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2023-10-26T12:59:13.343+02:00  INFO 9796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-26T12:59:13.349+02:00  INFO 9796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-26T12:59:13.350+02:00  INFO 9796 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26T12:59:13.412+02:00  INFO 9796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-26T12:59:13.413+02:00  INFO 9796 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 894 ms
+2023-10-26T12:59:13.518+02:00  INFO 9796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-26T12:59:13.761+02:00  INFO 9796 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c5406b
+2023-10-26T12:59:13.763+02:00  INFO 9796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-26T12:59:13.968+02:00  INFO 9796 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-10-26T12:59:13.973+02:00  INFO 9796 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankAppBase.BankAppBase
+2023-10-26T12:59:14.206+02:00  INFO 9796 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankAppBase.BankAppBase.
+2023-10-26T12:59:14.212+02:00  WARN 9796 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-10-26T12:59:14.214+02:00  INFO 9796 --- [main] liquibase.command                        : Command execution complete
+2023-10-26T12:59:14.445+02:00  INFO 9796 --- [main] liquibase.changelog                      : Creating database history table with name: BankAppBase.DATABASECHANGELOG
+2023-10-26T12:59:14.469+02:00  INFO 9796 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-10-26T12:59:14.517+02:00  INFO 9796 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-10-26T12:59:14.524+02:00  INFO 9796 --- [main] liquibase.command                        : Using deploymentId: 8317954524
+2023-10-26T12:59:14.525+02:00  INFO 9796 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-10-26T12:59:14.561+02:00  INFO 9796 --- [main] liquibase.changelog                      : Table users created
+2023-10-26T12:59:14.562+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create users table::o.sardonikova ran successfully in 15ms
+2023-10-26T12:59:14.578+02:00  INFO 9796 --- [main] liquibase.changelog                      : Table products created
+2023-10-26T12:59:14.579+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create products table::o.sardonikova ran successfully in 12ms
+2023-10-26T12:59:14.597+02:00  INFO 9796 --- [main] liquibase.changelog                      : Table accounts created
+2023-10-26T12:59:14.598+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create accounts table::o.sardonikova ran successfully in 15ms
+2023-10-26T12:59:14.619+02:00  INFO 9796 --- [main] liquibase.changelog                      : Table agreements created
+2023-10-26T12:59:14.619+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create agreements table::o.sardonikova ran successfully in 18ms
+2023-10-26T12:59:14.639+02:00  INFO 9796 --- [main] liquibase.changelog                      : Table transactions created
+2023-10-26T12:59:14.639+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create transactions table::o.sardonikova ran successfully in 17ms
+2023-10-26T12:59:14.644+02:00  INFO 9796 --- [main] liquibase.changelog                      : New row inserted into users
+2023-10-26T12:59:14.644+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into users table::o.sardonikova ran successfully in 2ms
+2023-10-26T12:59:14.648+02:00  INFO 9796 --- [main] liquibase.changelog                      : New row inserted into products
+2023-10-26T12:59:14.649+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into products table::o.sardonikova ran successfully in 2ms
+2023-10-26T12:59:14.654+02:00  INFO 9796 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-10-26T12:59:14.655+02:00  INFO 9796 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-10-26T12:59:14.657+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into accounts table::o.sardonikova ran successfully in 5ms
+2023-10-26T12:59:14.662+02:00  INFO 9796 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-10-26T12:59:14.664+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into agreements table::o.sardonikova ran successfully in 5ms
+2023-10-26T12:59:14.669+02:00  INFO 9796 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-10-26T12:59:14.670+02:00  INFO 9796 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into transactions table::o.sardonikova ran successfully in 3ms
+2023-10-26T12:59:14.673+02:00  INFO 9796 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-10-26T12:59:14.673+02:00  INFO 9796 --- [main] liquibase.util                           : Run:                         10
+2023-10-26T12:59:14.673+02:00  INFO 9796 --- [main] liquibase.util                           : Previously run:               0
+2023-10-26T12:59:14.673+02:00  INFO 9796 --- [main] liquibase.util                           : Filtered out:                 0
+2023-10-26T12:59:14.673+02:00  INFO 9796 --- [main] liquibase.util                           : -------------------------------
+2023-10-26T12:59:14.674+02:00  INFO 9796 --- [main] liquibase.util                           : Total change sets:           10
+
+2023-10-26T12:59:14.674+02:00  INFO 9796 --- [main] liquibase.util                           : Update summary generated
+2023-10-26T12:59:14.674+02:00  INFO 9796 --- [main] liquibase.command                        : Update command completed successfully.
+2023-10-26T12:59:14.676+02:00  INFO 9796 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-10-26T12:59:14.676+02:00  INFO 9796 --- [main] liquibase.command                        : Command execution complete
+2023-10-26T12:59:14.755+02:00  INFO 9796 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26T12:59:14.799+02:00  INFO 9796 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26T12:59:14.800+02:00  INFO 9796 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-10-26T12:59:14.893+02:00  INFO 9796 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-26T12:59:14.984+02:00  INFO 9796 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26T12:59:15.165+02:00  INFO 9796 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-26T12:59:15.625+02:00  INFO 9796 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26T12:59:15.626+02:00  INFO 9796 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26T12:59:15.943+02:00  INFO 9796 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26T12:59:16.911+02:00  INFO 9796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-26T12:59:16.916+02:00  INFO 9796 --- [main] com.example.BankAppApplication           : Started BankAppApplication in 4.767 seconds (process running for 5.294)
+2023-10-26T12:59:53.212+02:00  INFO 9796 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26T12:59:53.212+02:00  INFO 9796 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-26T12:59:53.213+02:00  INFO 9796 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-26T12:59:53.273+02:00  INFO 9796 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-10-26T12:59:53.276+02:00  INFO 9796 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-10-26T12:59:53.279+02:00 ERROR 9796 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [AccountDto(id=null, name=L1 Akk, type=JUNIOR, status=ACTIVE, balance=5000.00, currencyCode=USD, clientId=null)]. Cannot invoke "String.length()" because "name" is null
+2023-10-26T12:59:53.281+02:00 ERROR 9796 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.length()" because "name" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "String.length()" because "name" is null
+	at java.base/java.util.UUID.fromString(UUID.java:237)
+	at com.example.bankapp.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:38)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.service.impl.AccountServiceImpl$$SpringCGLIB$$0.createAccount(<generated>)
+	at com.example.bankapp.controller.AccountController.createAccount(AccountController.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.controller.AccountController$$SpringCGLIB$$0.createAccount(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2023-10-26T13:27:59.148+02:00  INFO 9796 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26T13:27:59.150+02:00  INFO 9796 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-26T13:27:59.154+02:00  INFO 9796 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-26T13:54:07.273+02:00  INFO 1940 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 1940 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-10-26T13:54:07.274+02:00  INFO 1940 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-10-26T13:54:07.638+02:00  INFO 1940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26T13:54:07.685+02:00  INFO 1940 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2023-10-26T13:54:08.082+02:00  INFO 1940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-26T13:54:08.087+02:00  INFO 1940 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-26T13:54:08.087+02:00  INFO 1940 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26T13:54:08.145+02:00  INFO 1940 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-26T13:54:08.146+02:00  INFO 1940 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 849 ms
+2023-10-26T13:54:08.240+02:00  INFO 1940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-26T13:54:08.405+02:00  INFO 1940 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@464aeb09
+2023-10-26T13:54:08.406+02:00  INFO 1940 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-26T13:54:08.572+02:00  INFO 1940 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-10-26T13:54:08.576+02:00  INFO 1940 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankAppBase.BankAppBase
+2023-10-26T13:54:08.761+02:00  INFO 1940 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankAppBase.BankAppBase.
+2023-10-26T13:54:08.768+02:00  WARN 1940 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-10-26T13:54:08.770+02:00  INFO 1940 --- [main] liquibase.command                        : Command execution complete
+2023-10-26T13:54:08.990+02:00  INFO 1940 --- [main] liquibase.changelog                      : Creating database history table with name: BankAppBase.DATABASECHANGELOG
+2023-10-26T13:54:09.014+02:00  INFO 1940 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-10-26T13:54:09.061+02:00  INFO 1940 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-10-26T13:54:09.066+02:00  INFO 1940 --- [main] liquibase.command                        : Using deploymentId: 8321249066
+2023-10-26T13:54:09.067+02:00  INFO 1940 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-10-26T13:54:09.104+02:00  INFO 1940 --- [main] liquibase.changelog                      : Table users created
+2023-10-26T13:54:09.105+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create users table::o.sardonikova ran successfully in 14ms
+2023-10-26T13:54:09.121+02:00  INFO 1940 --- [main] liquibase.changelog                      : Table products created
+2023-10-26T13:54:09.122+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create products table::o.sardonikova ran successfully in 13ms
+2023-10-26T13:54:09.141+02:00  INFO 1940 --- [main] liquibase.changelog                      : Table accounts created
+2023-10-26T13:54:09.141+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create accounts table::o.sardonikova ran successfully in 15ms
+2023-10-26T13:54:09.163+02:00  INFO 1940 --- [main] liquibase.changelog                      : Table agreements created
+2023-10-26T13:54:09.164+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create agreements table::o.sardonikova ran successfully in 20ms
+2023-10-26T13:54:09.183+02:00  INFO 1940 --- [main] liquibase.changelog                      : Table transactions created
+2023-10-26T13:54:09.183+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create transactions table::o.sardonikova ran successfully in 16ms
+2023-10-26T13:54:09.188+02:00  INFO 1940 --- [main] liquibase.changelog                      : New row inserted into users
+2023-10-26T13:54:09.189+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into users table::o.sardonikova ran successfully in 3ms
+2023-10-26T13:54:09.193+02:00  INFO 1940 --- [main] liquibase.changelog                      : New row inserted into products
+2023-10-26T13:54:09.194+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into products table::o.sardonikova ran successfully in 3ms
+2023-10-26T13:54:09.199+02:00  INFO 1940 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-10-26T13:54:09.201+02:00  INFO 1940 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-10-26T13:54:09.202+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into accounts table::o.sardonikova ran successfully in 4ms
+2023-10-26T13:54:09.207+02:00  INFO 1940 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-10-26T13:54:09.208+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into agreements table::o.sardonikova ran successfully in 3ms
+2023-10-26T13:54:09.213+02:00  INFO 1940 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-10-26T13:54:09.214+02:00  INFO 1940 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into transactions table::o.sardonikova ran successfully in 4ms
+2023-10-26T13:54:09.219+02:00  INFO 1940 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-10-26T13:54:09.219+02:00  INFO 1940 --- [main] liquibase.util                           : Run:                         10
+2023-10-26T13:54:09.219+02:00  INFO 1940 --- [main] liquibase.util                           : Previously run:               0
+2023-10-26T13:54:09.219+02:00  INFO 1940 --- [main] liquibase.util                           : Filtered out:                 0
+2023-10-26T13:54:09.219+02:00  INFO 1940 --- [main] liquibase.util                           : -------------------------------
+2023-10-26T13:54:09.219+02:00  INFO 1940 --- [main] liquibase.util                           : Total change sets:           10
+
+2023-10-26T13:54:09.220+02:00  INFO 1940 --- [main] liquibase.util                           : Update summary generated
+2023-10-26T13:54:09.220+02:00  INFO 1940 --- [main] liquibase.command                        : Update command completed successfully.
+2023-10-26T13:54:09.223+02:00  INFO 1940 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-10-26T13:54:09.223+02:00  INFO 1940 --- [main] liquibase.command                        : Command execution complete
+2023-10-26T13:54:09.304+02:00  INFO 1940 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26T13:54:09.334+02:00  INFO 1940 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26T13:54:09.335+02:00  INFO 1940 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-10-26T13:54:09.412+02:00  INFO 1940 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-26T13:54:09.502+02:00  INFO 1940 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26T13:54:09.661+02:00  INFO 1940 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-26T13:54:10.071+02:00  INFO 1940 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26T13:54:10.072+02:00  INFO 1940 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26T13:54:10.368+02:00  INFO 1940 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26T13:54:11.302+02:00  INFO 1940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-26T13:54:11.307+02:00  INFO 1940 --- [main] com.example.BankAppApplication           : Started BankAppApplication in 4.329 seconds (process running for 4.714)
+2023-10-26T13:55:23.442+02:00  INFO 1940 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26T13:55:23.442+02:00  INFO 1940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-26T13:55:23.443+02:00  INFO 1940 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-10-26T13:55:23.505+02:00  INFO 1940 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-10-26T13:55:23.509+02:00  INFO 1940 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-10-26T13:55:23.512+02:00 ERROR 1940 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [AccountDto(id=2442b573-307c-4f39-994e-5bb359745cba, name=L1 Akk, type=JUNIOR, status=null, balance=5000.00, currencyCode=USD, clientId=null)]. Name is null
+2023-10-26T13:55:23.514+02:00 ERROR 1940 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Name is null] with root cause
+
+java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:272)
+	at com.example.bankapp.enums.Status.valueOf(Status.java:3)
+	at com.example.bankapp.service.impl.AccountServiceImpl.setCreatedValuesInAccount(AccountServiceImpl.java:47)
+	at com.example.bankapp.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.service.impl.AccountServiceImpl$$SpringCGLIB$$0.createAccount(<generated>)
+	at com.example.bankapp.controller.AccountController.createAccount(AccountController.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.controller.AccountController$$SpringCGLIB$$0.createAccount(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2023-10-26T13:56:57.043+02:00  INFO 1940 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-10-26T13:56:57.044+02:00  INFO 1940 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-10-26T13:56:57.045+02:00 ERROR 1940 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [AccountDto(id=c67bfe33-e779-4d0e-81a3-8e6f1870d601, name=L1 Akk, type=JUNIOR, status=null, balance=5000.00, currencyCode=USD, clientId=null)]. Name is null
+2023-10-26T13:56:57.045+02:00 ERROR 1940 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Name is null] with root cause
+
+java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:272)
+	at com.example.bankapp.enums.Status.valueOf(Status.java:3)
+	at com.example.bankapp.service.impl.AccountServiceImpl.setCreatedValuesInAccount(AccountServiceImpl.java:47)
+	at com.example.bankapp.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.service.impl.AccountServiceImpl$$SpringCGLIB$$0.createAccount(<generated>)
+	at com.example.bankapp.controller.AccountController.createAccount(AccountController.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.controller.AccountController$$SpringCGLIB$$0.createAccount(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2023-10-26T13:58:15.699+02:00  INFO 1940 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-10-26T13:58:15.700+02:00  INFO 1940 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-10-26T13:58:15.701+02:00 ERROR 1940 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [AccountDto(id=2442b573-307c-4f39-994e-5bb359745cba, name=L1 Akk, type=JUNIOR, status=null, balance=5000.00, currencyCode=USD, clientId=c67bfe33-e779-4d0e-81a3-8e6f1870d601)]. Name is null
+2023-10-26T13:58:15.701+02:00 ERROR 1940 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Name is null] with root cause
+
+java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:272)
+	at com.example.bankapp.enums.Status.valueOf(Status.java:3)
+	at com.example.bankapp.service.impl.AccountServiceImpl.setCreatedValuesInAccount(AccountServiceImpl.java:47)
+	at com.example.bankapp.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.service.impl.AccountServiceImpl$$SpringCGLIB$$0.createAccount(<generated>)
+	at com.example.bankapp.controller.AccountController.createAccount(AccountController.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.controller.AccountController$$SpringCGLIB$$0.createAccount(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2023-10-26T13:59:20.420+02:00  INFO 1940 --- [http-nio-8080-exec-8] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-10-26T13:59:20.421+02:00  INFO 1940 --- [http-nio-8080-exec-8] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-10-26T13:59:20.422+02:00 ERROR 1940 --- [http-nio-8080-exec-8] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [AccountDto(id=2442b573-307c-4f39-994e-5bb359745cba, name=null, type=JUNIOR, status=null, balance=5000.00, currencyCode=USD, clientId=c67bfe33-e779-4d0e-81a3-8e6f1870d601)]. Name is null
+2023-10-26T13:59:20.422+02:00 ERROR 1940 --- [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Name is null] with root cause
+
+java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:272)
+	at com.example.bankapp.enums.Status.valueOf(Status.java:3)
+	at com.example.bankapp.service.impl.AccountServiceImpl.setCreatedValuesInAccount(AccountServiceImpl.java:47)
+	at com.example.bankapp.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.service.impl.AccountServiceImpl$$SpringCGLIB$$0.createAccount(<generated>)
+	at com.example.bankapp.controller.AccountController.createAccount(AccountController.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.controller.AccountController$$SpringCGLIB$$0.createAccount(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2023-10-26T14:01:36.086+02:00  INFO 1940 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26T14:01:36.087+02:00  INFO 1940 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-26T14:01:36.091+02:00  INFO 1940 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-26T14:01:40.864+02:00  INFO 16692 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 16692 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-10-26T14:01:40.866+02:00  INFO 16692 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-10-26T14:01:41.256+02:00  INFO 16692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26T14:01:41.304+02:00  INFO 16692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2023-10-26T14:01:41.725+02:00  INFO 16692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-10-26T14:01:41.731+02:00  INFO 16692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-26T14:01:41.731+02:00  INFO 16692 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-26T14:01:41.790+02:00  INFO 16692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-26T14:01:41.791+02:00  INFO 16692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 902 ms
+2023-10-26T14:01:41.892+02:00  INFO 16692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-26T14:01:42.063+02:00  INFO 16692 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27df5806
+2023-10-26T14:01:42.064+02:00  INFO 16692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-26T14:01:42.237+02:00  INFO 16692 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-10-26T14:01:42.241+02:00  INFO 16692 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankAppBase.BankAppBase
+2023-10-26T14:01:42.410+02:00  INFO 16692 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankAppBase.BankAppBase.
+2023-10-26T14:01:42.417+02:00  WARN 16692 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-10-26T14:01:42.419+02:00  INFO 16692 --- [main] liquibase.command                        : Command execution complete
+2023-10-26T14:01:42.650+02:00  INFO 16692 --- [main] liquibase.changelog                      : Creating database history table with name: BankAppBase.DATABASECHANGELOG
+2023-10-26T14:01:42.675+02:00  INFO 16692 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-10-26T14:01:42.729+02:00  INFO 16692 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-10-26T14:01:42.736+02:00  INFO 16692 --- [main] liquibase.command                        : Using deploymentId: 8321702735
+2023-10-26T14:01:42.737+02:00  INFO 16692 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-10-26T14:01:42.775+02:00  INFO 16692 --- [main] liquibase.changelog                      : Table users created
+2023-10-26T14:01:42.776+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create users table::o.sardonikova ran successfully in 15ms
+2023-10-26T14:01:42.793+02:00  INFO 16692 --- [main] liquibase.changelog                      : Table products created
+2023-10-26T14:01:42.793+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create products table::o.sardonikova ran successfully in 13ms
+2023-10-26T14:01:42.811+02:00  INFO 16692 --- [main] liquibase.changelog                      : Table accounts created
+2023-10-26T14:01:42.812+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create accounts table::o.sardonikova ran successfully in 14ms
+2023-10-26T14:01:42.840+02:00  INFO 16692 --- [main] liquibase.changelog                      : Table agreements created
+2023-10-26T14:01:42.840+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create agreements table::o.sardonikova ran successfully in 24ms
+2023-10-26T14:01:42.861+02:00  INFO 16692 --- [main] liquibase.changelog                      : Table transactions created
+2023-10-26T14:01:42.861+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create transactions table::o.sardonikova ran successfully in 18ms
+2023-10-26T14:01:42.867+02:00  INFO 16692 --- [main] liquibase.changelog                      : New row inserted into users
+2023-10-26T14:01:42.867+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into users table::o.sardonikova ran successfully in 2ms
+2023-10-26T14:01:42.873+02:00  INFO 16692 --- [main] liquibase.changelog                      : New row inserted into products
+2023-10-26T14:01:42.874+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into products table::o.sardonikova ran successfully in 3ms
+2023-10-26T14:01:42.880+02:00  INFO 16692 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-10-26T14:01:42.881+02:00  INFO 16692 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-10-26T14:01:42.882+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into accounts table::o.sardonikova ran successfully in 5ms
+2023-10-26T14:01:42.888+02:00  INFO 16692 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-10-26T14:01:42.889+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into agreements table::o.sardonikova ran successfully in 3ms
+2023-10-26T14:01:42.894+02:00  INFO 16692 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-10-26T14:01:42.894+02:00  INFO 16692 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into transactions table::o.sardonikova ran successfully in 2ms
+2023-10-26T14:01:42.898+02:00  INFO 16692 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-10-26T14:01:42.898+02:00  INFO 16692 --- [main] liquibase.util                           : Run:                         10
+2023-10-26T14:01:42.898+02:00  INFO 16692 --- [main] liquibase.util                           : Previously run:               0
+2023-10-26T14:01:42.898+02:00  INFO 16692 --- [main] liquibase.util                           : Filtered out:                 0
+2023-10-26T14:01:42.898+02:00  INFO 16692 --- [main] liquibase.util                           : -------------------------------
+2023-10-26T14:01:42.898+02:00  INFO 16692 --- [main] liquibase.util                           : Total change sets:           10
+
+2023-10-26T14:01:42.899+02:00  INFO 16692 --- [main] liquibase.util                           : Update summary generated
+2023-10-26T14:01:42.900+02:00  INFO 16692 --- [main] liquibase.command                        : Update command completed successfully.
+2023-10-26T14:01:42.902+02:00  INFO 16692 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-10-26T14:01:42.902+02:00  INFO 16692 --- [main] liquibase.command                        : Command execution complete
+2023-10-26T14:01:42.974+02:00  INFO 16692 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26T14:01:43.004+02:00  INFO 16692 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-10-26T14:01:43.005+02:00  INFO 16692 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-10-26T14:01:43.078+02:00  INFO 16692 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-26T14:01:43.163+02:00  INFO 16692 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-26T14:01:43.320+02:00  INFO 16692 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-26T14:01:43.736+02:00  INFO 16692 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26T14:01:43.738+02:00  INFO 16692 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26T14:01:44.050+02:00  INFO 16692 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-10-26T14:01:44.956+02:00  INFO 16692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-10-26T14:01:44.961+02:00  INFO 16692 --- [main] com.example.BankAppApplication           : Started BankAppApplication in 4.393 seconds (process running for 4.854)
+2023-10-26T14:01:53.379+02:00  INFO 16692 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26T14:01:53.379+02:00  INFO 16692 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-26T14:01:53.380+02:00  INFO 16692 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-26T14:01:53.439+02:00  INFO 16692 --- [http-nio-8080-exec-2] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-10-26T14:01:53.443+02:00  INFO 16692 --- [http-nio-8080-exec-2] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-10-26T14:01:53.445+02:00 ERROR 16692 --- [http-nio-8080-exec-2] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [AccountDto(id=2442b573-307c-4f39-994e-5bb359745cba, name=null, type=JUNIOR, status=null, balance=5000.00, currencyCode=USD, clientId=c67bfe33-e779-4d0e-81a3-8e6f1870d601)]. Name is null
+2023-10-26T14:01:53.447+02:00 ERROR 16692 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Name is null] with root cause
+
+java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:272)
+	at com.example.bankapp.enums.Status.valueOf(Status.java:3)
+	at com.example.bankapp.service.impl.AccountServiceImpl.setCreatedValuesInAccount(AccountServiceImpl.java:47)
+	at com.example.bankapp.service.impl.AccountServiceImpl.createAccount(AccountServiceImpl.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.service.impl.AccountServiceImpl$$SpringCGLIB$$0.createAccount(<generated>)
+	at com.example.bankapp.controller.AccountController.createAccount(AccountController.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:756)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at com.example.bankapp.controller.AccountController$$SpringCGLIB$$0.createAccount(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+2023-10-26T14:07:10.221+02:00  INFO 16692 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-10-26T14:07:10.222+02:00  INFO 16692 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-10-26T14:07:10.295+02:00  INFO 16692 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: com.example.bankapp.entity.Account@73489395
+END OF REQUEST
+2023-10-26T14:09:19.538+02:00  INFO 16692 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26T14:09:19.540+02:00  INFO 16692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-26T14:09:19.544+02:00  INFO 16692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

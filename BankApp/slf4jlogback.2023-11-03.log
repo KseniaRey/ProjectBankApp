@@ -1,0 +1,438 @@
+2023-11-03T14:48:19.978+01:00  INFO 1512 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 1512 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T14:48:19.982+01:00  INFO 1512 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T14:48:20.725+01:00  INFO 1512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T14:48:20.798+01:00  INFO 1512 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
+2023-11-03T14:48:21.556+01:00  INFO 1512 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T14:48:21.628+01:00  INFO 1512 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T14:48:21.631+01:00  INFO 1512 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T14:48:21.837+01:00  INFO 1512 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:48:22.000+01:00  INFO 1512 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T14:48:22.025+01:00  INFO 1512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T14:48:22.528+01:00  INFO 1512 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T14:48:22.530+01:00  INFO 1512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T14:48:22.832+01:00  INFO 1512 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:48:23.575+01:00  INFO 1512 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T14:48:23.578+01:00  INFO 1512 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:48:24.154+01:00  INFO 1512 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T14:48:25.183+01:00  WARN 1512 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T14:48:25.418+01:00  INFO 1512 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@301fb2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f6443c7, org.springframework.security.web.context.SecurityContextHolderFilter@302d6539, org.springframework.security.web.header.HeaderWriterFilter@5c12dac9, org.springframework.security.web.authentication.logout.LogoutFilter@4a5fb996, com.example.bankapp.security.Jwtfilter@32a1aabf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6195f048, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65e62ae8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@547b081e, org.springframework.security.web.session.SessionManagementFilter@6d7cd6e6, org.springframework.security.web.access.ExceptionTranslationFilter@35590829, org.springframework.security.web.access.intercept.AuthorizationFilter@4d74c01d]
+2023-11-03T14:48:26.209+01:00  INFO 1512 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T14:48:26.210+01:00  INFO 1512 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T14:48:26.211+01:00  INFO 1512 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-11-03T14:48:26.230+01:00  INFO 1512 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 6.701 seconds (process running for 8.151)
+2023-11-03T14:48:26.821+01:00  INFO 1512 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:48:26.923+01:00  INFO 1512 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T14:48:26.924+01:00  INFO 1512 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T14:48:55.646+01:00  INFO 3180 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 3180 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T14:48:55.647+01:00  INFO 3180 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T14:48:56.099+01:00  INFO 3180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T14:48:56.158+01:00  INFO 3180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces.
+2023-11-03T14:48:56.735+01:00  INFO 3180 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T14:48:56.777+01:00  INFO 3180 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T14:48:56.779+01:00  INFO 3180 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T14:48:56.919+01:00  INFO 3180 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:48:57.031+01:00  INFO 3180 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T14:48:57.049+01:00  INFO 3180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T14:48:57.318+01:00  INFO 3180 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T14:48:57.319+01:00  INFO 3180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T14:48:57.530+01:00  INFO 3180 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:48:58.051+01:00  INFO 3180 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T14:48:58.053+01:00  INFO 3180 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:48:58.644+01:00  INFO 3180 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T14:48:59.609+01:00  WARN 3180 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T14:48:59.823+01:00  INFO 3180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@776eb512, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ba29b51, org.springframework.security.web.context.SecurityContextHolderFilter@58e61e18, org.springframework.security.web.header.HeaderWriterFilter@22ac1a0d, org.springframework.security.web.authentication.logout.LogoutFilter@1ac8f29c, com.example.bankapp.security.Jwtfilter@267a0b6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ce7d6ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49d658bf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35e7cdb2, org.springframework.security.web.session.SessionManagementFilter@5af08232, org.springframework.security.web.access.ExceptionTranslationFilter@32d11a5c, org.springframework.security.web.access.intercept.AuthorizationFilter@3d587c73]
+2023-11-03T14:49:00.620+01:00  INFO 3180 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T14:49:00.621+01:00  INFO 3180 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T14:49:00.624+01:00  INFO 3180 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2023-11-03T14:49:00.657+01:00  INFO 3180 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 5.286 seconds (process running for 6.092)
+2023-11-03T14:49:01.082+01:00  INFO 3180 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:49:01.084+01:00  INFO 3180 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T14:49:01.085+01:00  INFO 3180 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T14:50:56.824+01:00  INFO 15240 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 15240 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T14:50:56.826+01:00  INFO 15240 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T14:50:57.311+01:00  INFO 15240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T14:50:57.361+01:00  INFO 15240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 5 JPA repository interfaces.
+2023-11-03T14:50:57.847+01:00  INFO 15240 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T14:50:57.890+01:00  INFO 15240 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T14:50:57.892+01:00  INFO 15240 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T14:50:58.017+01:00  INFO 15240 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:50:58.116+01:00  INFO 15240 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T14:50:58.135+01:00  INFO 15240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T14:50:58.367+01:00  INFO 15240 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T14:50:58.368+01:00  INFO 15240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T14:50:58.563+01:00  INFO 15240 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:50:59.037+01:00  INFO 15240 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T14:50:59.040+01:00  INFO 15240 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:50:59.587+01:00  INFO 15240 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T14:51:00.473+01:00  WARN 15240 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T14:51:00.702+01:00  INFO 15240 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6d98e607, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71ed3bc8, org.springframework.security.web.context.SecurityContextHolderFilter@7fdf32a4, org.springframework.security.web.header.HeaderWriterFilter@3df2f4ab, org.springframework.security.web.authentication.logout.LogoutFilter@6bb2dae6, com.example.bankapp.security.Jwtfilter@2e04dbc1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19d75d3c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c3cc103, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c6c6b7b, org.springframework.security.web.session.SessionManagementFilter@7bd4f212, org.springframework.security.web.access.ExceptionTranslationFilter@69e346b3, org.springframework.security.web.access.intercept.AuthorizationFilter@1ac8f29c]
+2023-11-03T14:51:01.528+01:00  INFO 15240 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T14:51:01.529+01:00  INFO 15240 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T14:51:01.530+01:00  INFO 15240 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-11-03T14:51:01.565+01:00  INFO 15240 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 5.013 seconds (process running for 5.751)
+2023-11-03T14:51:02.123+01:00  INFO 15240 --- [main] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 127.0.0.1
+URL : http://localhost/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-11-03T14:51:02.123+01:00  INFO 15240 --- [main] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-11-03T14:51:02.149+01:00  INFO 15240 --- [main] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: <201 CREATED Created,AccountDto(id=4c23877c-c778-4e57-a2e1-670acd7be2dd, name=Alisia Smith, type=TRAVEL, status=NEW, balance=20000, currencyCode=EUR, clientId=c586e826-f384-4c06-b00e-75ff679e732f, productName=null, ownerFullName=Amisha Smith),[Location:"/4c23877c-c778-4e57-a2e1-670acd7be2dd"]>
+END OF REQUEST
+2023-11-03T14:51:02.181+01:00  INFO 15240 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:51:02.183+01:00  INFO 15240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T14:51:02.193+01:00  INFO 15240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T14:51:30.968+01:00  INFO 23904 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 23904 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T14:51:30.969+01:00  INFO 23904 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T14:51:31.440+01:00  INFO 23904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T14:51:31.496+01:00  INFO 23904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2023-11-03T14:51:31.990+01:00  INFO 23904 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T14:51:32.040+01:00  INFO 23904 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T14:51:32.042+01:00  INFO 23904 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T14:51:32.181+01:00  INFO 23904 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:51:32.286+01:00  INFO 23904 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T14:51:32.304+01:00  INFO 23904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T14:51:32.554+01:00  INFO 23904 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T14:51:32.555+01:00  INFO 23904 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T14:51:32.740+01:00  INFO 23904 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:51:33.240+01:00  INFO 23904 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T14:51:33.243+01:00  INFO 23904 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:51:33.777+01:00  INFO 23904 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T14:51:34.704+01:00  WARN 23904 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T14:51:34.946+01:00  INFO 23904 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e77c9c3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4cc9d672, org.springframework.security.web.context.SecurityContextHolderFilter@776d50d6, org.springframework.security.web.header.HeaderWriterFilter@32a7c583, org.springframework.security.web.authentication.logout.LogoutFilter@4ed7fb78, com.example.bankapp.security.Jwtfilter@53cdfb09, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@122bfaac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ae3591b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bd4f212, org.springframework.security.web.session.SessionManagementFilter@3e49adfa, org.springframework.security.web.access.ExceptionTranslationFilter@53b5356, org.springframework.security.web.access.intercept.AuthorizationFilter@1895f7fe]
+2023-11-03T14:51:35.771+01:00  INFO 23904 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T14:51:35.772+01:00  INFO 23904 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T14:51:35.773+01:00  INFO 23904 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-11-03T14:51:35.797+01:00  INFO 23904 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 5.109 seconds (process running for 5.844)
+2023-11-03T14:51:36.400+01:00  INFO 23904 --- [main] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 127.0.0.1
+URL : http://localhost/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-11-03T14:51:36.403+01:00  INFO 23904 --- [main] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-11-03T14:51:36.430+01:00  INFO 23904 --- [main] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: <201 CREATED Created,AccountDto(id=9521a6b7-40b4-42e5-bf6b-6dfe57e66f32, name=Alisia Smith, type=TRAVEL, status=NEW, balance=20000, currencyCode=EUR, clientId=c586e826-f384-4c06-b00e-75ff679e732f, productName=null, ownerFullName=Amisha Smith),[Location:"/9521a6b7-40b4-42e5-bf6b-6dfe57e66f32"]>
+END OF REQUEST
+2023-11-03T14:51:36.465+01:00  INFO 23904 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:51:36.466+01:00  INFO 23904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T14:51:36.472+01:00  INFO 23904 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T14:52:20.559+01:00  INFO 24588 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 24588 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T14:52:20.561+01:00  INFO 24588 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T14:52:21.327+01:00  INFO 24588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T14:52:21.398+01:00  INFO 24588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+2023-11-03T14:52:22.114+01:00  INFO 24588 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T14:52:22.189+01:00  INFO 24588 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T14:52:22.191+01:00  INFO 24588 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T14:52:22.378+01:00  INFO 24588 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:52:22.538+01:00  INFO 24588 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T14:52:22.561+01:00  INFO 24588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T14:52:23.024+01:00  INFO 24588 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T14:52:23.026+01:00  INFO 24588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T14:52:23.364+01:00  INFO 24588 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T14:52:24.087+01:00  INFO 24588 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T14:52:24.090+01:00  INFO 24588 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:52:24.730+01:00  INFO 24588 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T14:52:25.687+01:00  WARN 24588 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T14:52:25.910+01:00  INFO 24588 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77505c0e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1be9d5f1, org.springframework.security.web.context.SecurityContextHolderFilter@235acf30, org.springframework.security.web.header.HeaderWriterFilter@21ad8083, org.springframework.security.web.authentication.logout.LogoutFilter@1c88b8b5, com.example.bankapp.security.Jwtfilter@5efae223, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c7b279b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@85513b3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f46eb74, org.springframework.security.web.session.SessionManagementFilter@7241e1, org.springframework.security.web.access.ExceptionTranslationFilter@65e62ae8, org.springframework.security.web.access.intercept.AuthorizationFilter@6ab9c64e]
+2023-11-03T14:52:26.666+01:00  INFO 24588 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T14:52:26.666+01:00  INFO 24588 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T14:52:26.667+01:00  INFO 24588 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-11-03T14:52:26.682+01:00  INFO 24588 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 6.535 seconds (process running for 7.773)
+2023-11-03T14:52:27.375+01:00  INFO 24588 --- [main] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 127.0.0.1
+URL : http://localhost/account/create
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.createAccount
+2023-11-03T14:52:27.376+01:00  INFO 24588 --- [main] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.createAccount
+2023-11-03T14:52:27.410+01:00  INFO 24588 --- [main] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: <201 CREATED Created,AccountDto(id=9f03da81-f262-49f9-8b63-2405580d4e19, name=Alisia Smith, type=TRAVEL, status=NEW, balance=20000, currencyCode=EUR, clientId=c586e826-f384-4c06-b00e-75ff679e732f, productName=null, ownerFullName=Amisha Smith),[Location:"/9f03da81-f262-49f9-8b63-2405580d4e19"]>
+END OF REQUEST
+2023-11-03T14:52:27.480+01:00  INFO 24588 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T14:52:27.588+01:00  INFO 24588 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T14:52:27.589+01:00  INFO 24588 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T15:23:43.254+01:00  INFO 16852 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 16852 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T15:23:43.255+01:00  INFO 16852 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T15:23:43.732+01:00  INFO 16852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T15:23:43.788+01:00  INFO 16852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+2023-11-03T15:23:44.305+01:00  INFO 16852 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T15:23:44.378+01:00  INFO 16852 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T15:23:44.381+01:00  INFO 16852 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T15:23:44.580+01:00  INFO 16852 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T15:23:44.678+01:00  INFO 16852 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T15:23:44.692+01:00  INFO 16852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T15:23:44.923+01:00  INFO 16852 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T15:23:44.924+01:00  INFO 16852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T15:23:45.110+01:00  INFO 16852 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T15:23:45.568+01:00  INFO 16852 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T15:23:45.570+01:00  INFO 16852 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T15:23:46.150+01:00  INFO 16852 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T15:23:47.033+01:00  WARN 16852 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T15:23:47.225+01:00  INFO 16852 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f6e6902, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54d8236c, org.springframework.security.web.context.SecurityContextHolderFilter@14f05ca0, org.springframework.security.web.header.HeaderWriterFilter@7fec354, org.springframework.security.web.authentication.logout.LogoutFilter@48ebcce5, com.example.bankapp.security.Jwtfilter@80347b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c62bae5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c9ba9e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5697f801, org.springframework.security.web.session.SessionManagementFilter@2ab4c4e, org.springframework.security.web.access.ExceptionTranslationFilter@2f053ff3, org.springframework.security.web.access.intercept.AuthorizationFilter@542adcfa]
+2023-11-03T15:23:48.083+01:00  INFO 16852 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T15:23:48.084+01:00  INFO 16852 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T15:23:48.086+01:00  INFO 16852 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-11-03T15:23:48.123+01:00  INFO 16852 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 5.141 seconds (process running for 5.872)
+2023-11-03T15:23:48.641+01:00  INFO 16852 --- [main] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 127.0.0.1
+URL : http://localhost/account/get-by-productName
+HTTP_METHOD : GET
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.getByProductName
+2023-11-03T15:23:48.641+01:00  INFO 16852 --- [main] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.getByProductName
+2023-11-03T15:23:48.655+01:00  WARN 16852 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2023-11-03T15:23:48.655+01:00 ERROR 16852 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Столбец "P1_0.PRODUCT_NAME" не найден
+Column "P1_0.PRODUCT_NAME" not found; SQL statement:
+select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=? [42122-210]
+2023-11-03T15:23:48.660+01:00 ERROR 16852 --- [main] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [Mortgage]. could not prepare statement [Столбец "P1_0.PRODUCT_NAME" не найден
+Column "P1_0.PRODUCT_NAME" not found; SQL statement:
+select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=? [42122-210]] [select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=?]; SQL [select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=?]
+2023-11-03T15:23:48.723+01:00  INFO 16852 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T15:23:48.724+01:00  INFO 16852 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T15:23:48.726+01:00  INFO 16852 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T15:31:18.168+01:00  INFO 11120 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 11120 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T15:31:18.169+01:00  INFO 11120 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T15:31:18.643+01:00  INFO 11120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T15:31:18.697+01:00  INFO 11120 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+2023-11-03T15:31:19.205+01:00  INFO 11120 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T15:31:19.250+01:00  INFO 11120 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T15:31:19.252+01:00  INFO 11120 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T15:31:19.383+01:00  INFO 11120 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T15:31:19.485+01:00  INFO 11120 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T15:31:19.502+01:00  INFO 11120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T15:31:19.740+01:00  INFO 11120 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T15:31:19.741+01:00  INFO 11120 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T15:31:19.930+01:00  INFO 11120 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T15:31:20.407+01:00  INFO 11120 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T15:31:20.409+01:00  INFO 11120 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T15:31:20.999+01:00  INFO 11120 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T15:31:21.831+01:00  WARN 11120 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T15:31:22.046+01:00  INFO 11120 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@43ef1243, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@386cc1c4, org.springframework.security.web.context.SecurityContextHolderFilter@245b009a, org.springframework.security.web.header.HeaderWriterFilter@24e6bd00, org.springframework.security.web.authentication.logout.LogoutFilter@3c380db5, com.example.bankapp.security.Jwtfilter@12b962b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bb2dae6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26c7940a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2e3c5ecc, org.springframework.security.web.session.SessionManagementFilter@410c1f44, org.springframework.security.web.access.ExceptionTranslationFilter@68893394, org.springframework.security.web.access.intercept.AuthorizationFilter@3674164b]
+2023-11-03T15:31:22.755+01:00  INFO 11120 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T15:31:22.756+01:00  INFO 11120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T15:31:22.756+01:00  INFO 11120 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-11-03T15:31:22.774+01:00  INFO 11120 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 4.873 seconds (process running for 5.6)
+2023-11-03T15:31:23.274+01:00  INFO 11120 --- [main] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 127.0.0.1
+URL : http://localhost/account/get-by-productName
+HTTP_METHOD : GET
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.getByProductName
+2023-11-03T15:31:23.274+01:00  INFO 11120 --- [main] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.getByProductName
+2023-11-03T15:31:23.299+01:00  WARN 11120 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2023-11-03T15:31:23.299+01:00 ERROR 11120 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Столбец "P1_0.PRODUCT_NAME" не найден
+Column "P1_0.PRODUCT_NAME" not found; SQL statement:
+select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=? [42122-210]
+2023-11-03T15:31:23.304+01:00 ERROR 11120 --- [main] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [Mortgage]. could not prepare statement [Столбец "P1_0.PRODUCT_NAME" не найден
+Column "P1_0.PRODUCT_NAME" not found; SQL statement:
+select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=? [42122-210]] [select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=?]; SQL [select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=?]
+2023-11-03T15:31:23.372+01:00  INFO 11120 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T15:31:23.374+01:00  INFO 11120 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T15:31:23.375+01:00  INFO 11120 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T15:37:26.282+01:00  INFO 16324 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 16324 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T15:37:26.283+01:00  INFO 16324 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T15:37:26.761+01:00  INFO 16324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T15:37:26.814+01:00  INFO 16324 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+2023-11-03T15:37:27.353+01:00  INFO 16324 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T15:37:27.398+01:00  INFO 16324 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T15:37:27.400+01:00  INFO 16324 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T15:37:27.539+01:00  INFO 16324 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T15:37:27.645+01:00  INFO 16324 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T15:37:27.662+01:00  INFO 16324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T15:37:27.902+01:00  INFO 16324 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T15:37:27.903+01:00  INFO 16324 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T15:37:28.084+01:00  INFO 16324 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T15:37:28.541+01:00  INFO 16324 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T15:37:28.543+01:00  INFO 16324 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T15:37:29.153+01:00  INFO 16324 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T15:37:30.038+01:00  WARN 16324 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T15:37:30.257+01:00  INFO 16324 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d27a744, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41185195, org.springframework.security.web.context.SecurityContextHolderFilter@1d07d728, org.springframework.security.web.header.HeaderWriterFilter@21f8aa9c, org.springframework.security.web.authentication.logout.LogoutFilter@386cc1c4, com.example.bankapp.security.Jwtfilter@61a369cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71ed3bc8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c6c6b7b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1849d35a, org.springframework.security.web.session.SessionManagementFilter@5e05dd42, org.springframework.security.web.access.ExceptionTranslationFilter@1ec8afc4, org.springframework.security.web.access.intercept.AuthorizationFilter@269fe2fe]
+2023-11-03T15:37:31.026+01:00  INFO 16324 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T15:37:31.026+01:00  INFO 16324 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T15:37:31.027+01:00  INFO 16324 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-11-03T15:37:31.049+01:00  INFO 16324 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 5.103 seconds (process running for 5.86)
+2023-11-03T15:37:31.528+01:00  WARN 16324 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'productName' for method parameter type String is not present]
+2023-11-03T15:37:31.546+01:00  INFO 16324 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T15:37:31.547+01:00  INFO 16324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T15:37:31.549+01:00  INFO 16324 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T15:39:36.632+01:00  INFO 22792 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 22792 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T15:39:36.633+01:00  INFO 22792 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T15:39:37.232+01:00  INFO 22792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T15:39:37.341+01:00  INFO 22792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 5 JPA repository interfaces.
+2023-11-03T15:39:37.976+01:00  INFO 22792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T15:39:38.059+01:00  INFO 22792 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T15:39:38.063+01:00  INFO 22792 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T15:39:38.370+01:00  INFO 22792 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T15:39:38.539+01:00  INFO 22792 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T15:39:38.567+01:00  INFO 22792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T15:39:38.900+01:00  INFO 22792 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T15:39:38.902+01:00  INFO 22792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T15:39:39.147+01:00  INFO 22792 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T15:39:39.683+01:00  INFO 22792 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T15:39:39.686+01:00  INFO 22792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T15:39:40.332+01:00  INFO 22792 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T15:39:41.277+01:00  WARN 22792 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T15:39:41.518+01:00  INFO 22792 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@23cf78f9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30b35687, org.springframework.security.web.context.SecurityContextHolderFilter@32c7495, org.springframework.security.web.header.HeaderWriterFilter@39b265c9, org.springframework.security.web.authentication.logout.LogoutFilter@8fe054, com.example.bankapp.security.Jwtfilter@4ca6f587, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45accb5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b32aaca, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c3c6564, org.springframework.security.web.session.SessionManagementFilter@5b0fc8c2, org.springframework.security.web.access.ExceptionTranslationFilter@54d8236c, org.springframework.security.web.access.intercept.AuthorizationFilter@77376e83]
+2023-11-03T15:39:42.532+01:00  INFO 22792 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T15:39:42.532+01:00  INFO 22792 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T15:39:42.533+01:00  INFO 22792 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-11-03T15:39:42.565+01:00  INFO 22792 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 6.244 seconds (process running for 7.368)
+2023-11-03T15:39:43.157+01:00  INFO 22792 --- [main] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 127.0.0.1
+URL : http://localhost/account/get-by-productName
+HTTP_METHOD : GET
+CONTROLLER_METHOD : com.example.bankapp.controller.AccountController.getByProductName
+2023-11-03T15:39:43.157+01:00  INFO 22792 --- [main] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.AccountServiceImpl.getByProductName
+2023-11-03T15:40:06.182+01:00  WARN 22792 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 42122, SQLState: 42S22
+2023-11-03T15:40:06.182+01:00 ERROR 22792 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Столбец "P1_0.PRODUCT_NAME" не найден
+Column "P1_0.PRODUCT_NAME" not found; SQL statement:
+select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=? [42122-210]
+2023-11-03T15:41:22.674+01:00  WARN 22792 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m43s669ms296µs200ns).
+2023-11-03T15:41:22.677+01:00 ERROR 22792 --- [main] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [Mortgage]. could not prepare statement [Столбец "P1_0.PRODUCT_NAME" не найден
+Column "P1_0.PRODUCT_NAME" not found; SQL statement:
+select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=? [42122-210]] [select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=?]; SQL [select a1_0.id,a1_0.account_balance,a1_0.client_id,a1_0.created_at,a1_0.currency_code,a1_0.account_name,a1_0.account_status,a1_0.account_type,a1_0.updated_at from accounts a1_0 join agreements a2_0 on a1_0.id=a2_0.account_id join products p1_0 on p1_0.id=a2_0.product_id where p1_0.product_name=?]
+2023-11-03T15:41:22.744+01:00  INFO 22792 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T15:41:22.746+01:00  INFO 22792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T15:41:22.765+01:00  INFO 22792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-11-03T16:05:59.677+01:00  INFO 25368 --- [main] c.e.b.controller.AccountControllerTest   : Starting AccountControllerTest using Java 19.0.2 with PID 25368 (started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp)
+2023-11-03T16:05:59.678+01:00  INFO 25368 --- [main] c.e.b.controller.AccountControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-11-03T16:06:00.172+01:00  INFO 25368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03T16:06:00.227+01:00  INFO 25368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 5 JPA repository interfaces.
+2023-11-03T16:06:00.753+01:00  INFO 25368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03T16:06:00.806+01:00  INFO 25368 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-03T16:06:00.808+01:00  INFO 25368 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-03T16:06:00.945+01:00  INFO 25368 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T16:06:01.049+01:00  INFO 25368 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-03T16:06:01.067+01:00  INFO 25368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03T16:06:01.312+01:00  INFO 25368 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./testdb user=SA
+2023-11-03T16:06:01.313+01:00  INFO 25368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03T16:06:01.506+01:00  INFO 25368 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-03T16:06:01.988+01:00  INFO 25368 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03T16:06:01.990+01:00  INFO 25368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T16:06:02.533+01:00  INFO 25368 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-03T16:06:03.450+01:00  WARN 25368 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03T16:06:03.679+01:00  INFO 25368 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1be6c991, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18482805, org.springframework.security.web.context.SecurityContextHolderFilter@1828eff, org.springframework.security.web.header.HeaderWriterFilter@65f270e7, org.springframework.security.web.authentication.logout.LogoutFilter@128579a6, com.example.bankapp.security.Jwtfilter@7b381066, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@792b0cad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8be84bf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@84180e2, org.springframework.security.web.session.SessionManagementFilter@69173bb7, org.springframework.security.web.access.ExceptionTranslationFilter@4a6dd88e, org.springframework.security.web.access.intercept.AuthorizationFilter@6e0fd2dc]
+2023-11-03T16:06:04.418+01:00  INFO 25368 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-03T16:06:04.419+01:00  INFO 25368 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-03T16:06:04.420+01:00  INFO 25368 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-11-03T16:06:04.453+01:00  INFO 25368 --- [main] c.e.b.controller.AccountControllerTest   : Started AccountControllerTest in 5.046 seconds (process running for 5.787)
+2023-11-03T16:06:04.535+01:00  WARN 25368 --- [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'beforeTestMethod' callback on TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] for test method [public void com.example.bankapp.controller.AccountControllerTest.testGetByProductName() throws java.lang.Exception] and test instance [com.example.bankapp.controller.AccountControllerTest@7f6ba409]
+
+org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #2 of class path resource [db/insert-test-data.sql]: INSERT INTO products(id, product_name, status, interest_rate, product_currency_code, product_limit, created_at, updated_at) values ('1', 'Mortgage', 'ACTIVE', 'USD', '3.5', '100000', '2023-09-17 12:00:00', '2023-09-17 12:00:00')
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.execute(ResourceDatabasePopulator.java:269)
+	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.lambda$executeSqlScripts$8(SqlScriptsTestExecutionListener.java:314)
+	at org.springframework.transaction.support.TransactionOperations.lambda$executeWithoutResult$0(TransactionOperations.java:68)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at org.springframework.transaction.support.TransactionOperations.executeWithoutResult(TransactionOperations.java:67)
+	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.executeSqlScripts(SqlScriptsTestExecutionListener.java:314)
+	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.lambda$executeSqlScripts$4(SqlScriptsTestExecutionListener.java:233)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.executeSqlScripts(SqlScriptsTestExecutionListener.java:233)
+	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.executeSqlScripts(SqlScriptsTestExecutionListener.java:180)
+	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.beforeTestMethod(SqlScriptsTestExecutionListener.java:135)
+	at org.springframework.test.context.TestContextManager.beforeTestMethod(TestContextManager.java:288)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.beforeEach(SpringExtension.java:174)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachCallbacks$2(TestMethodTestDescriptor.java:166)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:202)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:202)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachCallbacks(TestMethodTestDescriptor.java:165)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:132)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'USD' (PRODUCTS: ""INTEREST_RATE"" DECIMAL(6, 4))"
+Data conversion error converting "'USD' (PRODUCTS: ""INTEREST_RATE"" DECIMAL(6, 4))"; SQL statement:
+INSERT INTO products(id, product_name, status, interest_rate, product_currency_code, product_limit, created_at, updated_at) values ('1', 'Mortgage', 'ACTIVE', 'USD', '3.5', '100000', '2023-09-17 12:00:00', '2023-09-17 12:00:00') [22018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:525)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.table.Column.getDataConversionError(Column.java:413)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:372)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:61)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 69 common frames omitted
+Caused by: org.h2.message.DbException: Ошибка преобразования данных при конвертации "USD"
+Data conversion error converting "USD" [22018-210]
+	at org.h2.message.DbException.get(DbException.java:216)
+	at org.h2.value.ValueStringBase.getBigDecimal(ValueStringBase.java:151)
+	at org.h2.value.Value.convertToNumeric(Value.java:1678)
+	at org.h2.value.Value.convertTo(Value.java:1139)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	... 80 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "USD"
+Data conversion error converting "USD" [22018-210]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:525)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:496)
+	... 86 common frames omitted
+Caused by: java.lang.NumberFormatException: Character U is neither a decimal digit number, decimal point, nor "e" notation exponential mark.
+	at java.base/java.math.BigDecimal.<init>(BigDecimal.java:594)
+	at java.base/java.math.BigDecimal.<init>(BigDecimal.java:483)
+	at java.base/java.math.BigDecimal.<init>(BigDecimal.java:889)
+	at org.h2.value.ValueStringBase.getBigDecimal(ValueStringBase.java:149)
+	... 84 common frames omitted
+
+2023-11-03T16:06:04.888+01:00  INFO 25368 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03T16:06:04.890+01:00  INFO 25368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-03T16:06:04.891+01:00  INFO 25368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

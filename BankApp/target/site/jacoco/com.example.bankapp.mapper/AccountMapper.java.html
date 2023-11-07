@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AccountMapper.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BankApp</a> &gt; <a href="index.source.html" class="el_package">com.example.bankapp.mapper</a> &gt; <span class="el_source">AccountMapper.java</span></div><h1>AccountMapper.java</h1><pre class="source lang-java linenums">package com.example.bankapp.mapper;
+
+import com.example.bankapp.dto.AccountDto;
+import com.example.bankapp.entity.Account;
+import com.example.bankapp.entity.User;
+import org.mapstruct.IterableMapping;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Named;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.UUID;
+
+@Mapper(componentModel = &quot;spring&quot;)
+public interface AccountMapper {
+    @Named(&quot;toAccountDto&quot;)
+    @Mapping(source = &quot;client.id&quot;, target = &quot;clientId&quot;)
+    @Mapping(source = &quot;id&quot;, target = &quot;id&quot;)
+    @Mapping(source = &quot;agreement.product.name&quot;, target = &quot;productName&quot;)
+    @Mapping(source = &quot;client&quot;, target = &quot;ownerFullName&quot;, qualifiedByName = &quot;getFullName&quot;)
+    AccountDto toAccountDto(Account account);
+
+    @IterableMapping(qualifiedByName = &quot;toAccountDto&quot;)
+    List&lt;AccountDto&gt; accountsToAccountDto(List&lt;Account&gt; accounts);
+    @Named(&quot;toAccountEntity&quot;)
+    @Mapping(source = &quot;type&quot;, target = &quot;type&quot;, qualifiedByName = &quot;stringToEnumValue&quot;)
+    @Mapping(source = &quot;status&quot;, target = &quot;status&quot;, qualifiedByName = &quot;stringToEnumValue&quot;)
+    @Mapping(source = &quot;balance&quot;, target = &quot;balance&quot;, qualifiedByName = &quot;stringToBigDecimal&quot;)
+    @Mapping(source = &quot;currencyCode&quot;, target = &quot;currencyCode&quot;, qualifiedByName = &quot;stringToEnumValue&quot;)
+    Account toAccountEntity(AccountDto accountDto);
+
+    @Named(&quot;stringToEnumValue&quot;) // дублирование кода из transactionMapper - можем ли тут сделать через use чтобы использовать методы транзакшн маппера?
+    default String stringToEnumValue(String s){
+<span class="fc" id="L35">        return s.toUpperCase().replaceAll(&quot;\\s&quot;, &quot;_&quot;);</span>
+    }
+
+    @Named(&quot;stringToBigDecimal&quot;)
+    default BigDecimal stringToBigDecimal(String s) {
+<span class="fc" id="L40">        return new BigDecimal(s);</span>
+    }
+    
+    @Named(&quot;getFullName&quot;)
+    default String getFullName(User user){
+<span class="fc" id="L45">        return user.getFirstName() + &quot; &quot; + user.getLastName();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
