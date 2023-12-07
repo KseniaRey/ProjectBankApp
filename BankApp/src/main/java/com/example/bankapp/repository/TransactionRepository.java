@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Integer> {
-    @Query("select t from Transaction t where t.type = :type") // выполняет логику запроса
+    @Query("select t from Transaction t where t.type = :type")
     List<Transaction> findByType(@Param("type") TransactionType type);
 }

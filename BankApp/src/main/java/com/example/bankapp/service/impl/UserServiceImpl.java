@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
         Optional<User> optionalUser = userRepository.findByEmail(email);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-            if (passwordEncoder.matches(password, user.getPassword())) { // passwordEncoder.matches проверяет и сравнивает хеши
+            if (passwordEncoder.matches(password, user.getPassword())) {
                 return user;
             }
         }

@@ -18,7 +18,6 @@ import static jakarta.persistence.CascadeType.*;
 @NoArgsConstructor
 @Getter
 @Setter
-//@ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -22,12 +22,10 @@ public interface TransactionMapper {
 
     @Mapping(source = "amount", target = "amount", qualifiedByName = "stringToBigDecimal")
     @Mapping(source = "type", target = "type", qualifiedByName = "stringToEnumValue")
-        // на случай если в стринге передаем не тем кейсом
     Transaction toTransactionEntity(TransactionDto transactionDto);
 
     @IterableMapping(qualifiedByName = "toTransactionDto")
-        // к каждому элементу листа примени этот метод
-    List<TransactionDto> transactonsToTransactionsDTO(List<Transaction> transactions); // list of dtos
+    List<TransactionDto> transactonsToTransactionsDTO(List<Transaction> transactions);
 
     @Named("uuidToString")
     default String uuidToString(UUID uuid) {

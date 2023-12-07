@@ -30,7 +30,7 @@ class AgreementControllerTest {
     @WithUserDetails(value = "alice@example.com")
     public void testUpdateAgreementById() throws Exception {
         String agreementId = "6cf469b4-a094-47c2-bfd2-3c3bf4742436";
-        String expectedIR = "3.5000"; // захардкодили для проверки, знаем, что в базе такие значения
+        String expectedIR = "3.5000";
         AgreementDto agreementDto = new AgreementDto();
         agreementDto.setManagerId("4ede8454-d2ab-4143-a0e2-4f196ec25dbd");
         agreementDto.setStatus("SUSPENDED");
@@ -48,7 +48,7 @@ class AgreementControllerTest {
 
         AgreementDto result = objectMapper.readValue(updatedAgreementResultString, AgreementDto.class);
 
-        Assertions.assertEquals(agreementId, result.getId()); // проверяем, что это тот же агримент, который мы апдейтаем
+        Assertions.assertEquals(agreementId, result.getId());
         Assertions.assertEquals(agreementDto.getManagerId(), result.getManagerId());
         Assertions.assertEquals(expectedIR, result.getInterestRate());
         Assertions.assertEquals(agreementDto.getStatus(), result.getStatus());

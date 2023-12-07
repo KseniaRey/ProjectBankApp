@@ -14,16 +14,16 @@ import java.time.ZoneId;
 import java.util.Date;
 
 @Component
-public class Jwtprovider { // генерация и валидация токена, 2 на очереди
+public class Jwtprovider {
     private static final Logger LOGGER = LogManager.getLogger(Jwtprovider.class);
     @Value("${jwt.secret}")
-    private String jwtSecret; // ключ, кодовое слово, с помощью которого будут шифроваться токены
-    public String generateToken(String email) { // принимает логин // генерация токена
-        Date date = Date.from(LocalDateTime.now().plusMinutes(15).atZone(ZoneId.systemDefault()).toInstant()); // указываем, сколько наш токен будет валиден
+    private String jwtSecret;
+    public String generateToken(String email) {
+        Date date = Date.from(LocalDateTime.now().plusMinutes(15).atZone(ZoneId.systemDefault()).toInstant());
         return Jwts.builder()
                 .setSubject(email)
                 .setExpiration(date)
-                .signWith(getSignInKey(), SignatureAlgorithm.HS256) // + ключ-токен + модель шифрования
+                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 

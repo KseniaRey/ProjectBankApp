@@ -18,7 +18,6 @@ import static jakarta.persistence.CascadeType.*;
 @Getter
 @Setter
 
-
 public class Agreement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

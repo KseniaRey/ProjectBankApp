@@ -28,7 +28,7 @@ public interface AccountMapper {
     @Mapping(source = "currencyCode", target = "currencyCode", qualifiedByName = "stringToEnumValue")
     Account toAccountEntity(AccountDto accountDto);
 
-    @Named("stringToEnumValue") // дублирование кода из transactionMapper - можем ли тут сделать через use чтобы использовать методы транзакшн маппера?
+    @Named("stringToEnumValue")
     default String stringToEnumValue(String s){
         return s.toUpperCase().replaceAll("\\s", "_");
     }

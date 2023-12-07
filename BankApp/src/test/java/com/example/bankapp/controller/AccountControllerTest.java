@@ -48,9 +48,9 @@ public class AccountControllerTest {
 
 
         MvcResult accountCreatingResult = mockMvc.perform(MockMvcRequestBuilders.post("/account/create")
-                        .contentType(MediaType.APPLICATION_JSON) // в каком формате вернет(или положит?) значение наш контроллер// ?
-                        .content(accountDtoStrindData)) // кладем, что принимает контроллер
-                .andReturn();                       // возвращает ответ из контроллера
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(accountDtoStrindData))
+                .andReturn();
 
         Assertions.assertEquals(201, accountCreatingResult.getResponse().getStatus());
 
@@ -58,7 +58,7 @@ public class AccountControllerTest {
         Account accountResult = objectMapper.readValue(accountResultJson, Account.class);
 
         Assertions.assertEquals(accountDto.getName(), accountResult.getName());
-        Assertions.assertEquals(accountDto.getType(), accountResult.getType().toString()); // зачем ту стринг?
+        Assertions.assertEquals(accountDto.getType(), accountResult.getType().toString());
         Assertions.assertEquals(accountDto.getStatus(), accountResult.getStatus().toString());
         Assertions.assertEquals(accountDto.getBalance(), accountResult.getBalance().toString());
         Assertions.assertEquals(accountDto.getCurrencyCode(), accountResult.getCurrencyCode().toString());
@@ -89,7 +89,7 @@ public class AccountControllerTest {
             .getResponse()
             .getContentAsString();
 
-    List<AccountDto> actualListDto = objectMapper.readValue(getProductResult, new TypeReference<>() { //  new TypeReference - при приведении к коллекции
+    List<AccountDto> actualListDto = objectMapper.readValue(getProductResult, new TypeReference<>() {
     });
     Assertions.assertEquals(accountDtoList, actualListDto);
     }

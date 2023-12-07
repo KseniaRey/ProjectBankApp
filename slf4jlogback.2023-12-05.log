@@ -1,0 +1,696 @@
+2023-12-05T17:22:59.499+01:00  INFO 18316 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 18316 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-12-05T17:22:59.502+01:00  INFO 18316 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-12-05T17:23:00.012+01:00  INFO 18316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-05T17:23:00.071+01:00  INFO 18316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces.
+2023-12-05T17:23:00.563+01:00  INFO 18316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-05T17:23:00.569+01:00  INFO 18316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-05T17:23:00.570+01:00  INFO 18316 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-12-05T17:23:00.638+01:00  INFO 18316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-05T17:23:00.638+01:00  INFO 18316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1114 ms
+2023-12-05T17:23:00.753+01:00  INFO 18316 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-05T17:23:00.760+01:00 ERROR 18316 --- [main] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtfilter' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\Jwtfilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'customUserDetailsService' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.bankapp.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2023-12-05T17:23:00.783+01:00  INFO 18316 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-05T17:23:00.787+01:00  WARN 18316 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2023-12-05T17:23:00.794+01:00  INFO 18316 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-12-05T17:23:00.805+01:00 ERROR 18316 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.BankAppApplication.main(BankAppApplication.java:10)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:489)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:183)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:161)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtfilter' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\Jwtfilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'customUserDetailsService' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.bankapp.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:261)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:235)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4886)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1328)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1318)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:846)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1328)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1318)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:241)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:918)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:485)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customUserDetailsService' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.bankapp.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.example.bankapp.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${url}?createDatabaseIfNotExist=true
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 94 common frames omitted
+Caused by: java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept jdbcUrl, ${url}?createDatabaseIfNotExist=true
+	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:110)
+	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:326)
+	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:112)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:93)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:281)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 103 common frames omitted
+
+2023-12-05T17:36:30.783+01:00  INFO 12972 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 12972 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by root in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-12-05T17:36:30.785+01:00  INFO 12972 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-12-05T17:36:31.343+01:00  INFO 12972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-05T17:36:31.402+01:00  INFO 12972 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces.
+2023-12-05T17:36:31.868+01:00  INFO 12972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-05T17:36:31.874+01:00  INFO 12972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-05T17:36:31.874+01:00  INFO 12972 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-12-05T17:36:31.949+01:00  INFO 12972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-05T17:36:31.949+01:00  INFO 12972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1141 ms
+2023-12-05T17:36:32.057+01:00  INFO 12972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-05T17:36:33.260+01:00 ERROR 12972 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+java.sql.SQLException: Access denied for user '${user}'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:281)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:261)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:235)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4886)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1328)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1318)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:846)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1328)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1318)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:241)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:918)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:485)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:489)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:183)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.BankAppApplication.main(BankAppApplication.java:10)
+
+2023-12-05T17:36:33.263+01:00 ERROR 12972 --- [main] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtfilter' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\Jwtfilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'customUserDetailsService' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.bankapp.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2023-12-05T17:36:33.277+01:00  INFO 12972 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-05T17:36:33.280+01:00  WARN 12972 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2023-12-05T17:36:33.287+01:00  INFO 12972 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-12-05T17:36:33.297+01:00 ERROR 12972 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.BankAppApplication.main(BankAppApplication.java:10)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:489)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:183)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:161)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtfilter' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\Jwtfilter.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'customUserDetailsService' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.bankapp.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:261)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:235)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4886)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1328)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1318)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:846)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1328)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1318)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:241)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:918)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:485)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customUserDetailsService' defined in file [D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes\com\example\bankapp\security\CustomUserDetailsService.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.example.bankapp.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 54 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.example.bankapp.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 68 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: java.sql.SQLException: Access denied for user '${user}'@'localhost' (using password: YES)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 94 common frames omitted
+Caused by: liquibase.exception.DatabaseException: java.sql.SQLException: Access denied for user '${user}'@'localhost' (using password: YES)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:286)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 103 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user '${user}'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:281)
+	... 105 common frames omitted
+
+2023-12-05T17:37:49.030+01:00  INFO 20800 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 20800 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-12-05T17:37:49.031+01:00  INFO 20800 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-12-05T17:37:49.488+01:00  INFO 20800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-05T17:37:49.558+01:00  INFO 20800 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 5 JPA repository interfaces.
+2023-12-05T17:37:50.062+01:00  INFO 20800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-05T17:37:50.068+01:00  INFO 20800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-05T17:37:50.068+01:00  INFO 20800 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-12-05T17:37:50.130+01:00  INFO 20800 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-05T17:37:50.131+01:00  INFO 20800 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1075 ms
+2023-12-05T17:37:50.228+01:00  INFO 20800 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-05T17:37:50.409+01:00  INFO 20800 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4751cd3
+2023-12-05T17:37:50.410+01:00  INFO 20800 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-05T17:37:50.599+01:00  INFO 20800 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-05T17:37:50.604+01:00  INFO 20800 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankAppBase.BankAppBase
+2023-12-05T17:37:50.787+01:00  INFO 20800 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankAppBase.BankAppBase.
+2023-12-05T17:37:50.794+01:00  WARN 20800 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-12-05T17:37:50.795+01:00  INFO 20800 --- [main] liquibase.command                        : Command execution complete
+2023-12-05T17:37:51.073+01:00  INFO 20800 --- [main] liquibase.changelog                      : Creating database history table with name: BankAppBase.DATABASECHANGELOG
+2023-12-05T17:37:51.087+01:00  INFO 20800 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-12-05T17:37:51.134+01:00  INFO 20800 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-05T17:37:51.140+01:00  INFO 20800 --- [main] liquibase.command                        : Using deploymentId: 1794271140
+2023-12-05T17:37:51.141+01:00  INFO 20800 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-12-05T17:37:51.182+01:00  INFO 20800 --- [main] liquibase.changelog                      : Table users created
+2023-12-05T17:37:51.183+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create users table::o.sardonikova ran successfully in 16ms
+2023-12-05T17:37:51.201+01:00  INFO 20800 --- [main] liquibase.changelog                      : Table products created
+2023-12-05T17:37:51.201+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create products table::o.sardonikova ran successfully in 13ms
+2023-12-05T17:37:51.218+01:00  INFO 20800 --- [main] liquibase.changelog                      : Table accounts created
+2023-12-05T17:37:51.218+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create accounts table::o.sardonikova ran successfully in 14ms
+2023-12-05T17:37:51.241+01:00  INFO 20800 --- [main] liquibase.changelog                      : Table agreements created
+2023-12-05T17:37:51.241+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create agreements table::o.sardonikova ran successfully in 19ms
+2023-12-05T17:37:51.260+01:00  INFO 20800 --- [main] liquibase.changelog                      : Table transactions created
+2023-12-05T17:37:51.261+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create transactions table::o.sardonikova ran successfully in 17ms
+2023-12-05T17:37:51.267+01:00  INFO 20800 --- [main] liquibase.changelog                      : New row inserted into users
+2023-12-05T17:37:51.268+01:00  INFO 20800 --- [main] liquibase.changelog                      : New row inserted into users
+2023-12-05T17:37:51.268+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into users table::o.sardonikova ran successfully in 4ms
+2023-12-05T17:37:51.273+01:00  INFO 20800 --- [main] liquibase.changelog                      : New row inserted into products
+2023-12-05T17:37:51.274+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into products table::o.sardonikova ran successfully in 3ms
+2023-12-05T17:37:51.280+01:00  INFO 20800 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-12-05T17:37:51.281+01:00  INFO 20800 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-12-05T17:37:51.282+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into accounts table::o.sardonikova ran successfully in 5ms
+2023-12-05T17:37:51.287+01:00  INFO 20800 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-12-05T17:37:51.288+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into agreements table::o.sardonikova ran successfully in 3ms
+2023-12-05T17:37:51.294+01:00  INFO 20800 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-12-05T17:37:51.295+01:00  INFO 20800 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into transactions table::o.sardonikova ran successfully in 5ms
+2023-12-05T17:37:51.299+01:00  INFO 20800 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-05T17:37:51.299+01:00  INFO 20800 --- [main] liquibase.util                           : Run:                         10
+2023-12-05T17:37:51.299+01:00  INFO 20800 --- [main] liquibase.util                           : Previously run:               0
+2023-12-05T17:37:51.299+01:00  INFO 20800 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-05T17:37:51.299+01:00  INFO 20800 --- [main] liquibase.util                           : -------------------------------
+2023-12-05T17:37:51.299+01:00  INFO 20800 --- [main] liquibase.util                           : Total change sets:           10
+
+2023-12-05T17:37:51.299+01:00  INFO 20800 --- [main] liquibase.util                           : Update summary generated
+2023-12-05T17:37:51.300+01:00  INFO 20800 --- [main] liquibase.command                        : Update command completed successfully.
+2023-12-05T17:37:51.303+01:00  INFO 20800 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-05T17:37:51.303+01:00  INFO 20800 --- [main] liquibase.command                        : Command execution complete
+2023-12-05T17:37:51.388+01:00  INFO 20800 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-05T17:37:51.418+01:00  INFO 20800 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-12-05T17:37:51.420+01:00  INFO 20800 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-05T17:37:51.496+01:00  INFO 20800 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-05T17:37:51.583+01:00  INFO 20800 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-05T17:37:51.744+01:00  INFO 20800 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-05T17:37:52.176+01:00  INFO 20800 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-05T17:37:52.178+01:00  INFO 20800 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-05T17:37:52.471+01:00  INFO 20800 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-05T17:37:53.536+01:00  INFO 20800 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ae47f4f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38bb78ea, org.springframework.security.web.context.SecurityContextHolderFilter@406a54a2, org.springframework.security.web.header.HeaderWriterFilter@7430d369, org.springframework.security.web.authentication.logout.LogoutFilter@5eaa3349, com.example.bankapp.security.Jwtfilter@5b3f2fe1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c5ebad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2901e61e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@116b7837, org.springframework.security.web.session.SessionManagementFilter@45399fae, org.springframework.security.web.access.ExceptionTranslationFilter@26c6e9d6, org.springframework.security.web.access.intercept.AuthorizationFilter@4f8cdeb4]
+2023-12-05T17:37:53.953+01:00  INFO 20800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-05T17:37:53.959+01:00  INFO 20800 --- [main] com.example.BankAppApplication           : Started BankAppApplication in 5.258 seconds (process running for 5.62)
+2023-12-05T17:38:05.263+01:00  INFO 20800 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05T17:38:05.263+01:00  INFO 20800 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-05T17:38:05.264+01:00  INFO 20800 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-05T17:38:05.800+01:00  INFO 20800 --- [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 185 ms
+2023-12-05T17:39:28.915+01:00  INFO 20800 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/auth
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AuthController.auth
+2023-12-05T17:39:28.920+01:00  INFO 20800 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.UserServiceImpl.findByEmailAndPassword
+2023-12-05T17:39:29.032+01:00  INFO 20800 --- [http-nio-8080-exec-4] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: <200 OK OK,eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiZXhwIjoxNzAxNzk1MjY5fQ.VeRtb3lkKHTAE7Ejlrrq9-705IeA8MRtKKIs5ckYcjQ,[]>
+END OF REQUEST
+2023-12-05T17:39:30.561+01:00  INFO 20800 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/auth
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AuthController.auth
+2023-12-05T17:39:30.561+01:00  INFO 20800 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.UserServiceImpl.findByEmailAndPassword
+2023-12-05T17:39:30.567+01:00  INFO 20800 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: <200 OK OK,eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiZXhwIjoxNzAxNzk1MjcwfQ.inu_-QDRf0CibNUmt_2fiOQ4mynTEq8SrOGlrAWSSt8,[]>
+END OF REQUEST
+2023-12-05T17:40:55.349+01:00  INFO 20800 --- [http-nio-8080-exec-7] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/product/1
+HTTP_METHOD : GET
+CONTROLLER_METHOD : com.example.bankapp.controller.ProductController.getProductById
+2023-12-05T17:40:55.350+01:00  INFO 20800 --- [http-nio-8080-exec-7] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.ProductServiceImpl.getById
+2023-12-05T17:40:55.360+01:00  INFO 20800 --- [http-nio-8080-exec-7] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: ProductDto(id=1, name=Mortgage, status=ACTIVE, currencyCode=USD, interestRate=3.5000, minLimit=100000)
+END OF REQUEST
+2023-12-05T17:41:34.570+01:00  INFO 20800 --- [http-nio-8080-exec-9] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/product/1
+HTTP_METHOD : GET
+CONTROLLER_METHOD : com.example.bankapp.controller.ProductController.getProductById
+2023-12-05T17:41:34.570+01:00  INFO 20800 --- [http-nio-8080-exec-9] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.ProductServiceImpl.getById
+2023-12-05T17:41:34.572+01:00  INFO 20800 --- [http-nio-8080-exec-9] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: ProductDto(id=1, name=Mortgage, status=ACTIVE, currencyCode=USD, interestRate=3.5000, minLimit=100000)
+END OF REQUEST
+2023-12-05T18:02:57.890+01:00  INFO 20800 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-05T18:02:57.892+01:00  INFO 20800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-05T18:02:57.897+01:00  INFO 20800 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-05T18:03:02.387+01:00  INFO 12776 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 12776 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-12-05T18:03:02.389+01:00  INFO 12776 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-12-05T18:03:02.963+01:00  INFO 12776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-05T18:03:03.013+01:00  INFO 12776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2023-12-05T18:03:03.500+01:00  INFO 12776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-05T18:03:03.506+01:00  INFO 12776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-05T18:03:03.506+01:00  INFO 12776 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-12-05T18:03:03.566+01:00  INFO 12776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-05T18:03:03.567+01:00  INFO 12776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1150 ms
+2023-12-05T18:03:03.673+01:00  INFO 12776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-05T18:03:03.851+01:00  INFO 12776 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4dd1548e
+2023-12-05T18:03:03.852+01:00  INFO 12776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-05T18:03:04.025+01:00  INFO 12776 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-05T18:03:04.030+01:00  INFO 12776 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankAppBase.BankAppBase
+2023-12-05T18:03:04.211+01:00  INFO 12776 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankAppBase.BankAppBase.
+2023-12-05T18:03:04.227+01:00  WARN 12776 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-12-05T18:03:04.229+01:00  INFO 12776 --- [main] liquibase.command                        : Command execution complete
+2023-12-05T18:03:04.494+01:00  INFO 12776 --- [main] liquibase.changelog                      : Creating database history table with name: BankAppBase.DATABASECHANGELOG
+2023-12-05T18:03:04.516+01:00  INFO 12776 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-12-05T18:03:04.566+01:00  INFO 12776 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-05T18:03:04.572+01:00  INFO 12776 --- [main] liquibase.command                        : Using deploymentId: 1795784572
+2023-12-05T18:03:04.573+01:00  INFO 12776 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-12-05T18:03:04.616+01:00  INFO 12776 --- [main] liquibase.changelog                      : Table users created
+2023-12-05T18:03:04.617+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create users table::o.sardonikova ran successfully in 17ms
+2023-12-05T18:03:04.635+01:00  INFO 12776 --- [main] liquibase.changelog                      : Table products created
+2023-12-05T18:03:04.635+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create products table::o.sardonikova ran successfully in 12ms
+2023-12-05T18:03:04.653+01:00  INFO 12776 --- [main] liquibase.changelog                      : Table accounts created
+2023-12-05T18:03:04.654+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create accounts table::o.sardonikova ran successfully in 15ms
+2023-12-05T18:03:04.679+01:00  INFO 12776 --- [main] liquibase.changelog                      : Table agreements created
+2023-12-05T18:03:04.679+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create agreements table::o.sardonikova ran successfully in 22ms
+2023-12-05T18:03:04.700+01:00  INFO 12776 --- [main] liquibase.changelog                      : Table transactions created
+2023-12-05T18:03:04.700+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create transactions table::o.sardonikova ran successfully in 18ms
+2023-12-05T18:03:04.706+01:00  INFO 12776 --- [main] liquibase.changelog                      : New row inserted into users
+2023-12-05T18:03:04.707+01:00  INFO 12776 --- [main] liquibase.changelog                      : New row inserted into users
+2023-12-05T18:03:04.708+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into users table::o.sardonikova ran successfully in 4ms
+2023-12-05T18:03:04.713+01:00  INFO 12776 --- [main] liquibase.changelog                      : New row inserted into products
+2023-12-05T18:03:04.714+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into products table::o.sardonikova ran successfully in 3ms
+2023-12-05T18:03:04.719+01:00  INFO 12776 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-12-05T18:03:04.720+01:00  INFO 12776 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-12-05T18:03:04.720+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into accounts table::o.sardonikova ran successfully in 3ms
+2023-12-05T18:03:04.725+01:00  INFO 12776 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-12-05T18:03:04.726+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into agreements table::o.sardonikova ran successfully in 2ms
+2023-12-05T18:03:04.730+01:00  INFO 12776 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-12-05T18:03:04.730+01:00  INFO 12776 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into transactions table::o.sardonikova ran successfully in 2ms
+2023-12-05T18:03:04.733+01:00  INFO 12776 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-05T18:03:04.733+01:00  INFO 12776 --- [main] liquibase.util                           : Run:                         10
+2023-12-05T18:03:04.733+01:00  INFO 12776 --- [main] liquibase.util                           : Previously run:               0
+2023-12-05T18:03:04.733+01:00  INFO 12776 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-05T18:03:04.733+01:00  INFO 12776 --- [main] liquibase.util                           : -------------------------------
+2023-12-05T18:03:04.733+01:00  INFO 12776 --- [main] liquibase.util                           : Total change sets:           10
+
+2023-12-05T18:03:04.733+01:00  INFO 12776 --- [main] liquibase.util                           : Update summary generated
+2023-12-05T18:03:04.734+01:00  INFO 12776 --- [main] liquibase.command                        : Update command completed successfully.
+2023-12-05T18:03:04.735+01:00  INFO 12776 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-05T18:03:04.736+01:00  INFO 12776 --- [main] liquibase.command                        : Command execution complete
+2023-12-05T18:03:04.810+01:00  INFO 12776 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-05T18:03:04.838+01:00  INFO 12776 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-12-05T18:03:04.840+01:00  INFO 12776 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-05T18:03:04.925+01:00  INFO 12776 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-05T18:03:05.007+01:00  INFO 12776 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-05T18:03:05.167+01:00  INFO 12776 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-05T18:03:05.702+01:00  INFO 12776 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-05T18:03:05.704+01:00  INFO 12776 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-05T18:03:06.045+01:00  INFO 12776 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-05T18:03:07.152+01:00  INFO 12776 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ae47f4f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38bb78ea, org.springframework.security.web.context.SecurityContextHolderFilter@406a54a2, org.springframework.security.web.header.HeaderWriterFilter@7430d369, org.springframework.security.web.authentication.logout.LogoutFilter@5eaa3349, com.example.bankapp.security.Jwtfilter@5a74d858, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c5ebad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2901e61e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@116b7837, org.springframework.security.web.session.SessionManagementFilter@45399fae, org.springframework.security.web.access.ExceptionTranslationFilter@26c6e9d6, org.springframework.security.web.access.intercept.AuthorizationFilter@4f8cdeb4]
+2023-12-05T18:03:07.510+01:00  INFO 12776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-05T18:03:07.516+01:00  INFO 12776 --- [main] com.example.BankAppApplication           : Started BankAppApplication in 5.477 seconds (process running for 5.855)
+2023-12-05T18:03:18.040+01:00  INFO 12776 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-05T18:03:18.040+01:00  INFO 12776 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-05T18:03:18.041+01:00  INFO 12776 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-12-05T18:03:18.515+01:00  INFO 12776 --- [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 181 ms
+2023-12-05T18:04:13.917+01:00  INFO 12776 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-05T18:04:13.919+01:00  INFO 12776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-05T18:04:13.922+01:00  INFO 12776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-05T18:14:19.933+01:00  INFO 4808 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 4808 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-12-05T18:14:19.936+01:00  INFO 4808 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-12-05T18:14:20.911+01:00  INFO 4808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-05T18:14:20.978+01:00  INFO 4808 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 5 JPA repository interfaces.
+2023-12-05T18:14:21.725+01:00  INFO 4808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-05T18:14:21.732+01:00  INFO 4808 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-05T18:14:21.732+01:00  INFO 4808 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-12-05T18:14:21.817+01:00  INFO 4808 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-05T18:14:21.818+01:00  INFO 4808 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1849 ms
+2023-12-05T18:14:21.957+01:00  INFO 4808 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-05T18:14:22.145+01:00  INFO 4808 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c77344f
+2023-12-05T18:14:22.146+01:00  INFO 4808 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-05T18:14:22.334+01:00  INFO 4808 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-05T18:14:22.339+01:00  INFO 4808 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankAppBase.BankAppBase
+2023-12-05T18:14:22.563+01:00  INFO 4808 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankAppBase.BankAppBase.
+2023-12-05T18:14:22.570+01:00  WARN 4808 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-12-05T18:14:22.571+01:00  INFO 4808 --- [main] liquibase.command                        : Command execution complete
+2023-12-05T18:14:22.956+01:00  INFO 4808 --- [main] liquibase.changelog                      : Creating database history table with name: BankAppBase.DATABASECHANGELOG
+2023-12-05T18:14:22.973+01:00  INFO 4808 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-12-05T18:14:23.050+01:00  INFO 4808 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-12-05T18:14:23.061+01:00  INFO 4808 --- [main] liquibase.command                        : Using deploymentId: 1796463061
+2023-12-05T18:14:23.064+01:00  INFO 4808 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-12-05T18:14:23.125+01:00  INFO 4808 --- [main] liquibase.changelog                      : Table users created
+2023-12-05T18:14:23.126+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create users table::o.sardonikova ran successfully in 22ms
+2023-12-05T18:14:23.157+01:00  INFO 4808 --- [main] liquibase.changelog                      : Table products created
+2023-12-05T18:14:23.158+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create products table::o.sardonikova ran successfully in 22ms
+2023-12-05T18:14:23.199+01:00  INFO 4808 --- [main] liquibase.changelog                      : Table accounts created
+2023-12-05T18:14:23.200+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create accounts table::o.sardonikova ran successfully in 33ms
+2023-12-05T18:14:23.238+01:00  INFO 4808 --- [main] liquibase.changelog                      : Table agreements created
+2023-12-05T18:14:23.239+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create agreements table::o.sardonikova ran successfully in 33ms
+2023-12-05T18:14:23.419+01:00  INFO 4808 --- [main] liquibase.changelog                      : Table transactions created
+2023-12-05T18:14:23.419+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create transactions table::o.sardonikova ran successfully in 174ms
+2023-12-05T18:14:23.426+01:00  INFO 4808 --- [main] liquibase.changelog                      : New row inserted into users
+2023-12-05T18:14:23.427+01:00  INFO 4808 --- [main] liquibase.changelog                      : New row inserted into users
+2023-12-05T18:14:23.428+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into users table::o.sardonikova ran successfully in 4ms
+2023-12-05T18:14:23.433+01:00  INFO 4808 --- [main] liquibase.changelog                      : New row inserted into products
+2023-12-05T18:14:23.434+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into products table::o.sardonikova ran successfully in 3ms
+2023-12-05T18:14:23.441+01:00  INFO 4808 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-12-05T18:14:23.442+01:00  INFO 4808 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-12-05T18:14:23.443+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into accounts table::o.sardonikova ran successfully in 5ms
+2023-12-05T18:14:23.450+01:00  INFO 4808 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-12-05T18:14:23.451+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into agreements table::o.sardonikova ran successfully in 5ms
+2023-12-05T18:14:23.460+01:00  INFO 4808 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-12-05T18:14:23.462+01:00  INFO 4808 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into transactions table::o.sardonikova ran successfully in 5ms
+2023-12-05T18:14:23.467+01:00  INFO 4808 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-12-05T18:14:23.468+01:00  INFO 4808 --- [main] liquibase.util                           : Run:                         10
+2023-12-05T18:14:23.468+01:00  INFO 4808 --- [main] liquibase.util                           : Previously run:               0
+2023-12-05T18:14:23.468+01:00  INFO 4808 --- [main] liquibase.util                           : Filtered out:                 0
+2023-12-05T18:14:23.468+01:00  INFO 4808 --- [main] liquibase.util                           : -------------------------------
+2023-12-05T18:14:23.468+01:00  INFO 4808 --- [main] liquibase.util                           : Total change sets:           10
+
+2023-12-05T18:14:23.469+01:00  INFO 4808 --- [main] liquibase.util                           : Update summary generated
+2023-12-05T18:14:23.470+01:00  INFO 4808 --- [main] liquibase.command                        : Update command completed successfully.
+2023-12-05T18:14:23.473+01:00  INFO 4808 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-12-05T18:14:23.474+01:00  INFO 4808 --- [main] liquibase.command                        : Command execution complete
+2023-12-05T18:14:23.635+01:00  INFO 4808 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-05T18:14:23.694+01:00  INFO 4808 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-12-05T18:14:23.696+01:00  INFO 4808 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-05T18:14:23.890+01:00  INFO 4808 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-05T18:14:24.015+01:00  INFO 4808 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-05T18:14:24.316+01:00  INFO 4808 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-05T18:14:25.040+01:00  INFO 4808 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-05T18:14:25.042+01:00  INFO 4808 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-05T18:14:25.479+01:00  INFO 4808 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-05T18:14:27.443+01:00  INFO 4808 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@76ad3ab9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61fe303d, org.springframework.security.web.context.SecurityContextHolderFilter@684ad81c, org.springframework.security.web.header.HeaderWriterFilter@2901e61e, org.springframework.security.web.authentication.logout.LogoutFilter@6f056fdf, com.example.bankapp.security.Jwtfilter@43e78ed6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@381b485b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4bd23b22, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54704b46, org.springframework.security.web.session.SessionManagementFilter@43bc8c98, org.springframework.security.web.access.ExceptionTranslationFilter@406a54a2, org.springframework.security.web.access.intercept.AuthorizationFilter@4d5f1c98]
+2023-12-05T18:14:28.085+01:00  INFO 4808 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-05T18:14:28.096+01:00  INFO 4808 --- [main] com.example.BankAppApplication           : Started BankAppApplication in 8.706 seconds (process running for 10.287)
+2023-12-05T18:14:34.563+01:00  INFO 4808 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-05T18:14:34.564+01:00  INFO 4808 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-05T18:14:34.568+01:00  INFO 4808 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

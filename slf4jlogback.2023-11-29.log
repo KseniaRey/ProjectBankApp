@@ -1,0 +1,110 @@
+2023-11-29T12:29:46.630+01:00  INFO 7556 --- [main] com.example.BankAppApplication           : Starting BankAppApplication using Java 19.0.2 with PID 7556 (D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0\BankApp\target\classes started by Professional in D:\Ksu\Tel-Ran 070223-m\Java\Prof\CHeat\ProjectBankAppV.2.0)
+2023-11-29T12:29:46.633+01:00  INFO 7556 --- [main] com.example.BankAppApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-11-29T12:29:47.137+01:00  INFO 7556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-29T12:29:47.186+01:00  INFO 7556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2023-11-29T12:29:47.694+01:00  INFO 7556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-29T12:29:47.701+01:00  INFO 7556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-29T12:29:47.701+01:00  INFO 7556 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-29T12:29:47.765+01:00  INFO 7556 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-29T12:29:47.766+01:00  INFO 7556 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1109 ms
+2023-11-29T12:29:47.879+01:00  INFO 7556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-29T12:29:48.105+01:00  INFO 7556 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46c662f2
+2023-11-29T12:29:48.107+01:00  INFO 7556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-29T12:29:48.306+01:00  INFO 7556 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-29T12:29:48.312+01:00  INFO 7556 --- [main] liquibase.command                        : Dropping Database Objects in schema: BankAppBase.BankAppBase
+2023-11-29T12:29:48.507+01:00  INFO 7556 --- [main] liquibase.database                       : Successfully deleted all supported object types in schema BankAppBase.BankAppBase.
+2023-11-29T12:29:48.524+01:00  WARN 7556 --- [main] liquibase.lockservice                    : Failed to release change log lock
+2023-11-29T12:29:48.526+01:00  INFO 7556 --- [main] liquibase.command                        : Command execution complete
+2023-11-29T12:29:48.801+01:00  INFO 7556 --- [main] liquibase.changelog                      : Creating database history table with name: BankAppBase.DATABASECHANGELOG
+2023-11-29T12:29:48.813+01:00  INFO 7556 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-11-29T12:29:48.862+01:00  INFO 7556 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-11-29T12:29:48.868+01:00  INFO 7556 --- [main] liquibase.command                        : Using deploymentId: 1257388868
+2023-11-29T12:29:48.869+01:00  INFO 7556 --- [main] liquibase.changelog                      : Reading from BankAppBase.DATABASECHANGELOG
+2023-11-29T12:29:48.907+01:00  INFO 7556 --- [main] liquibase.changelog                      : Table users created
+2023-11-29T12:29:48.908+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create users table::o.sardonikova ran successfully in 15ms
+2023-11-29T12:29:48.927+01:00  INFO 7556 --- [main] liquibase.changelog                      : Table products created
+2023-11-29T12:29:48.927+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create products table::o.sardonikova ran successfully in 13ms
+2023-11-29T12:29:48.944+01:00  INFO 7556 --- [main] liquibase.changelog                      : Table accounts created
+2023-11-29T12:29:48.945+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create accounts table::o.sardonikova ran successfully in 15ms
+2023-11-29T12:29:48.971+01:00  INFO 7556 --- [main] liquibase.changelog                      : Table agreements created
+2023-11-29T12:29:48.971+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create agreements table::o.sardonikova ran successfully in 23ms
+2023-11-29T12:29:48.991+01:00  INFO 7556 --- [main] liquibase.changelog                      : Table transactions created
+2023-11-29T12:29:48.991+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702-create-tables-changelog.xml::create transactions table::o.sardonikova ran successfully in 17ms
+2023-11-29T12:29:49.003+01:00  INFO 7556 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-29T12:29:49.004+01:00  INFO 7556 --- [main] liquibase.changelog                      : New row inserted into users
+2023-11-29T12:29:49.005+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into users table::o.sardonikova ran successfully in 4ms
+2023-11-29T12:29:49.010+01:00  INFO 7556 --- [main] liquibase.changelog                      : New row inserted into products
+2023-11-29T12:29:49.011+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into products table::o.sardonikova ran successfully in 3ms
+2023-11-29T12:29:49.018+01:00  INFO 7556 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-29T12:29:49.019+01:00  INFO 7556 --- [main] liquibase.changelog                      : New row inserted into accounts
+2023-11-29T12:29:49.020+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into accounts table::o.sardonikova ran successfully in 5ms
+2023-11-29T12:29:49.025+01:00  INFO 7556 --- [main] liquibase.changelog                      : New row inserted into agreements
+2023-11-29T12:29:49.026+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into agreements table::o.sardonikova ran successfully in 3ms
+2023-11-29T12:29:49.031+01:00  INFO 7556 --- [main] liquibase.changelog                      : New row inserted into transactions
+2023-11-29T12:29:49.032+01:00  INFO 7556 --- [main] liquibase.changelog                      : ChangeSet db/changeLog/changes/v0.0.1-SNAPSHOT/BE-0702_insert_test_data_changelog_1.xml::insert test data into transactions table::o.sardonikova ran successfully in 3ms
+2023-11-29T12:29:49.035+01:00  INFO 7556 --- [main] liquibase.util                           : UPDATE SUMMARY
+2023-11-29T12:29:49.035+01:00  INFO 7556 --- [main] liquibase.util                           : Run:                         10
+2023-11-29T12:29:49.035+01:00  INFO 7556 --- [main] liquibase.util                           : Previously run:               0
+2023-11-29T12:29:49.035+01:00  INFO 7556 --- [main] liquibase.util                           : Filtered out:                 0
+2023-11-29T12:29:49.035+01:00  INFO 7556 --- [main] liquibase.util                           : -------------------------------
+2023-11-29T12:29:49.035+01:00  INFO 7556 --- [main] liquibase.util                           : Total change sets:           10
+
+2023-11-29T12:29:49.036+01:00  INFO 7556 --- [main] liquibase.util                           : Update summary generated
+2023-11-29T12:29:49.037+01:00  INFO 7556 --- [main] liquibase.command                        : Update command completed successfully.
+2023-11-29T12:29:49.039+01:00  INFO 7556 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-11-29T12:29:49.039+01:00  INFO 7556 --- [main] liquibase.command                        : Command execution complete
+2023-11-29T12:29:49.118+01:00  INFO 7556 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-29T12:29:49.147+01:00  INFO 7556 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-11-29T12:29:49.149+01:00  INFO 7556 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-29T12:29:49.228+01:00  INFO 7556 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-29T12:29:49.307+01:00  INFO 7556 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-29T12:29:49.473+01:00  INFO 7556 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-11-29T12:29:49.951+01:00  INFO 7556 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-29T12:29:49.953+01:00  INFO 7556 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-29T12:29:50.255+01:00  INFO 7556 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-29T12:29:51.377+01:00  INFO 7556 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a7f7201, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@552fcd4d, org.springframework.security.web.context.SecurityContextHolderFilter@6368ed64, org.springframework.security.web.header.HeaderWriterFilter@51413fc7, org.springframework.security.web.authentication.logout.LogoutFilter@4f3551c1, com.example.bankapp.security.Jwtfilter@43f0a612, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61772cb7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c90e6f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@698f3ac4, org.springframework.security.web.session.SessionManagementFilter@3e79c9e0, org.springframework.security.web.access.ExceptionTranslationFilter@21e896f6, org.springframework.security.web.access.intercept.AuthorizationFilter@285289cd]
+2023-11-29T12:29:51.788+01:00  INFO 7556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-29T12:29:51.795+01:00  INFO 7556 --- [main] com.example.BankAppApplication           : Started BankAppApplication in 5.51 seconds (process running for 5.913)
+2023-11-29T12:29:58.466+01:00  INFO 7556 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-29T12:29:58.467+01:00  INFO 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-29T12:29:58.467+01:00  INFO 7556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-11-29T12:29:58.991+01:00  INFO 7556 --- [http-nio-8080-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 171 ms
+2023-11-29T12:30:14.700+01:00  INFO 7556 --- [http-nio-8080-exec-8] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/auth
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AuthController.auth
+2023-11-29T12:30:14.704+01:00  INFO 7556 --- [http-nio-8080-exec-8] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.UserServiceImpl.findByEmailAndPassword
+2023-11-29T12:30:14.756+01:00 ERROR 7556 --- [http-nio-8080-exec-8] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [UserDto(email=string, password=string, id=string, status=string, taxCode=string, firstName=string, lastName=string, address=string, phone=string, role=string)]. Email or password is not correct
+2023-11-29T12:30:18.496+01:00  INFO 7556 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/auth
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AuthController.auth
+2023-11-29T12:30:18.497+01:00  INFO 7556 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.UserServiceImpl.findByEmailAndPassword
+2023-11-29T12:30:18.500+01:00 ERROR 7556 --- [http-nio-8080-exec-1] c.example.bankapp.aspect.LoggingAspect   : Request throw an exception. Cause - [UserDto(email=string, password=string, id=string, status=string, taxCode=string, firstName=string, lastName=string, address=string, phone=string, role=string)]. Email or password is not correct
+2023-11-29T12:40:11.625+01:00  INFO 7556 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/auth
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AuthController.auth
+2023-11-29T12:40:11.626+01:00  INFO 7556 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.UserServiceImpl.findByEmailAndPassword
+2023-11-29T12:40:11.664+01:00  INFO 7556 --- [http-nio-8080-exec-6] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: <200 OK OK,eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGljZUBleGFtcGxlLmNvbSIsImV4cCI6MTcwMTI1ODkxMX0.88qxbh6ZVExHj9P1a3fIxLnOcoj6BAgVusMlLcUsN2U,[]>
+END OF REQUEST
+2023-11-29T12:40:13.311+01:00  INFO 7556 --- [http-nio-8080-exec-9] c.example.bankapp.aspect.LoggingAspect   : NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8080/auth
+HTTP_METHOD : POST
+CONTROLLER_METHOD : com.example.bankapp.controller.AuthController.auth
+2023-11-29T12:40:13.312+01:00  INFO 7556 --- [http-nio-8080-exec-9] c.example.bankapp.aspect.LoggingAspect   : RUN SERVICE:
+SERVICE_METHOD : com.example.bankapp.service.impl.UserServiceImpl.findByEmailAndPassword
+2023-11-29T12:40:13.316+01:00  INFO 7556 --- [http-nio-8080-exec-9] c.example.bankapp.aspect.LoggingAspect   : 
+Return value: <200 OK OK,eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGljZUBleGFtcGxlLmNvbSIsImV4cCI6MTcwMTI1ODkxM30.H_ciepVghPlMz7jSwmfXE2rqEmDhAsEElCn2b2DmuaI,[]>
+END OF REQUEST
+2023-11-29T12:49:20.635+01:00  INFO 7556 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-29T12:49:20.636+01:00  INFO 7556 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-29T12:49:20.641+01:00  INFO 7556 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

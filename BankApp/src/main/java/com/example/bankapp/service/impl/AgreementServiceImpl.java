@@ -44,7 +44,7 @@ public class AgreementServiceImpl implements AgreementService {
                 !existingAgreement.getManager().getId().toString().equals(updatedAgreementDto.getManagerId())) {
             User manager = userRepository.findManagerById(UUID.fromString(updatedAgreementDto.getManagerId()))
                     .orElseThrow(() -> new EntityNotFoundException("Manager is not found"));
-            existingAgreement.setManager(manager); // добавляем данные
+            existingAgreement.setManager(manager);
         }
         agreementMapper.updateAgreementFromDto(updatedAgreementDto, existingAgreement);
         existingAgreement.setUpdatedAt(LocalDateTime.now());

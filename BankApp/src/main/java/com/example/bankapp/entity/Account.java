@@ -22,7 +22,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @Getter
 @Setter
-//@ToString
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

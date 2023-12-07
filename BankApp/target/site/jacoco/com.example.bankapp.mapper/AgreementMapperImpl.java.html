@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AgreementMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BankApp</a> &gt; <a href="index.source.html" class="el_package">com.example.bankapp.mapper</a> &gt; <span class="el_source">AgreementMapperImpl.java</span></div><h1>AgreementMapperImpl.java</h1><pre class="source lang-java linenums">package com.example.bankapp.mapper;
+
+import com.example.bankapp.dto.AgreementDto;
+import com.example.bankapp.entity.Account;
+import com.example.bankapp.entity.Agreement;
+import com.example.bankapp.entity.Product;
+import com.example.bankapp.entity.User;
+import com.example.bankapp.enums.AgreementStatus;
+import java.math.BigDecimal;
+import java.util.UUID;
+import javax.annotation.processing.Generated;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2023-12-06T22:40:20+0100&quot;,
+    comments = &quot;version: 1.5.5.Final, compiler: javac, environment: Java 19.0.2 (Oracle Corporation)&quot;
+)
+@Component
+<span class="fc" id="L21">public class AgreementMapperImpl implements AgreementMapper {</span>
+
+    @Autowired
+    private AccountMapper accountMapper;
+
+    @Override
+    public void updateAgreementFromDto(AgreementDto agreementDto, Agreement agreement) {
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">        if ( agreementDto == null ) {</span>
+<span class="nc" id="L29">            return;</span>
+        }
+
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        if ( agreementDto.getSum() != null ) {</span>
+<span class="fc" id="L33">            agreement.setSum( accountMapper.stringToBigDecimal( agreementDto.getSum() ) );</span>
+        }
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if ( agreementDto.getStatus() != null ) {</span>
+<span class="fc" id="L36">            agreement.setStatus( Enum.valueOf( AgreementStatus.class, agreementDto.getStatus() ) );</span>
+        }
+<span class="fc" id="L38">    }</span>
+
+    @Override
+    public AgreementDto mapToDto(Agreement existingAgreement) {
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if ( existingAgreement == null ) {</span>
+<span class="nc" id="L43">            return null;</span>
+        }
+
+<span class="fc" id="L46">        AgreementDto agreementDto = new AgreementDto();</span>
+
+<span class="fc" id="L48">        UUID id = existingAgreementManagerId( existingAgreement );</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if ( id != null ) {</span>
+<span class="fc" id="L50">            agreementDto.setManagerId( id.toString() );</span>
+        }
+<span class="fc" id="L52">        Integer id1 = existingAgreementProductId( existingAgreement );</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if ( id1 != null ) {</span>
+<span class="fc" id="L54">            agreementDto.setProductId( String.valueOf( id1 ) );</span>
+        }
+<span class="fc" id="L56">        UUID id2 = existingAgreementAccountId( existingAgreement );</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">        if ( id2 != null ) {</span>
+<span class="fc" id="L58">            agreementDto.setAccountId( id2.toString() );</span>
+        }
+<span class="fc" id="L60">        BigDecimal interestRate = existingAgreementProductInterestRate( existingAgreement );</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        if ( interestRate != null ) {</span>
+<span class="fc" id="L62">            agreementDto.setInterestRate( interestRate.toString() );</span>
+        }
+<span class="fc" id="L64">        Integer minLimit = existingAgreementProductMinLimit( existingAgreement );</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if ( minLimit != null ) {</span>
+<span class="fc" id="L66">            agreementDto.setSum( String.valueOf( minLimit ) );</span>
+        }
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">        if ( existingAgreement.getId() != null ) {</span>
+<span class="fc" id="L69">            agreementDto.setId( existingAgreement.getId().toString() );</span>
+        }
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">        if ( existingAgreement.getStatus() != null ) {</span>
+<span class="fc" id="L72">            agreementDto.setStatus( existingAgreement.getStatus().name() );</span>
+        }
+
+<span class="fc" id="L75">        return agreementDto;</span>
+    }
+
+    @Override
+    public Agreement mapToEntity(AgreementDto agreementDto) {
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">        if ( agreementDto == null ) {</span>
+<span class="nc" id="L81">            return null;</span>
+        }
+
+<span class="fc" id="L84">        Agreement agreement = new Agreement();</span>
+
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">        if ( agreementDto.getId() != null ) {</span>
+<span class="nc" id="L87">            agreement.setId( UUID.fromString( agreementDto.getId() ) );</span>
+        }
+<span class="pc bpc" id="L89" title="1 of 2 branches missed.">        if ( agreementDto.getStatus() != null ) {</span>
+<span class="fc" id="L90">            agreement.setStatus( Enum.valueOf( AgreementStatus.class, agreementDto.getStatus() ) );</span>
+        }
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        if ( agreementDto.getSum() != null ) {</span>
+<span class="nc" id="L93">            agreement.setSum( new BigDecimal( agreementDto.getSum() ) );</span>
+        }
+
+<span class="fc" id="L96">        return agreement;</span>
+    }
+
+    private UUID existingAgreementManagerId(Agreement agreement) {
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">        if ( agreement == null ) {</span>
+<span class="nc" id="L101">            return null;</span>
+        }
+<span class="fc" id="L103">        User manager = agreement.getManager();</span>
+<span class="pc bpc" id="L104" title="1 of 2 branches missed.">        if ( manager == null ) {</span>
+<span class="nc" id="L105">            return null;</span>
+        }
+<span class="fc" id="L107">        UUID id = manager.getId();</span>
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">        if ( id == null ) {</span>
+<span class="nc" id="L109">            return null;</span>
+        }
+<span class="fc" id="L111">        return id;</span>
+    }
+
+    private Integer existingAgreementProductId(Agreement agreement) {
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">        if ( agreement == null ) {</span>
+<span class="nc" id="L116">            return null;</span>
+        }
+<span class="fc" id="L118">        Product product = agreement.getProduct();</span>
+<span class="pc bpc" id="L119" title="1 of 2 branches missed.">        if ( product == null ) {</span>
+<span class="nc" id="L120">            return null;</span>
+        }
+<span class="fc" id="L122">        Integer id = product.getId();</span>
+<span class="pc bpc" id="L123" title="1 of 2 branches missed.">        if ( id == null ) {</span>
+<span class="nc" id="L124">            return null;</span>
+        }
+<span class="fc" id="L126">        return id;</span>
+    }
+
+    private UUID existingAgreementAccountId(Agreement agreement) {
+<span class="pc bpc" id="L130" title="1 of 2 branches missed.">        if ( agreement == null ) {</span>
+<span class="nc" id="L131">            return null;</span>
+        }
+<span class="fc" id="L133">        Account account = agreement.getAccount();</span>
+<span class="pc bpc" id="L134" title="1 of 2 branches missed.">        if ( account == null ) {</span>
+<span class="nc" id="L135">            return null;</span>
+        }
+<span class="fc" id="L137">        UUID id = account.getId();</span>
+<span class="pc bpc" id="L138" title="1 of 2 branches missed.">        if ( id == null ) {</span>
+<span class="nc" id="L139">            return null;</span>
+        }
+<span class="fc" id="L141">        return id;</span>
+    }
+
+    private BigDecimal existingAgreementProductInterestRate(Agreement agreement) {
+<span class="pc bpc" id="L145" title="1 of 2 branches missed.">        if ( agreement == null ) {</span>
+<span class="nc" id="L146">            return null;</span>
+        }
+<span class="fc" id="L148">        Product product = agreement.getProduct();</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">        if ( product == null ) {</span>
+<span class="nc" id="L150">            return null;</span>
+        }
+<span class="fc" id="L152">        BigDecimal interestRate = product.getInterestRate();</span>
+<span class="pc bpc" id="L153" title="1 of 2 branches missed.">        if ( interestRate == null ) {</span>
+<span class="nc" id="L154">            return null;</span>
+        }
+<span class="fc" id="L156">        return interestRate;</span>
+    }
+
+    private Integer existingAgreementProductMinLimit(Agreement agreement) {
+<span class="pc bpc" id="L160" title="1 of 2 branches missed.">        if ( agreement == null ) {</span>
+<span class="nc" id="L161">            return null;</span>
+        }
+<span class="fc" id="L163">        Product product = agreement.getProduct();</span>
+<span class="pc bpc" id="L164" title="1 of 2 branches missed.">        if ( product == null ) {</span>
+<span class="nc" id="L165">            return null;</span>
+        }
+<span class="fc" id="L167">        Integer minLimit = product.getMinLimit();</span>
+<span class="pc bpc" id="L168" title="1 of 2 branches missed.">        if ( minLimit == null ) {</span>
+<span class="nc" id="L169">            return null;</span>
+        }
+<span class="fc" id="L171">        return minLimit;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
