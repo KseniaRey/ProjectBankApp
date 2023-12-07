@@ -13,25 +13,25 @@ import java.util.Arrays;
 
 @RestControllerAdvice
 <span class="fc" id="L15">public class ExceptionHandlerController {</span>
-    @ExceptionHandler(RuntimeException.class) // обязательно указать тип ошибки
+    @ExceptionHandler(RuntimeException.class)
     public ResponseEntity&lt;ErrorData&gt; handleRuntimeException(RuntimeException exception){
-<span class="nc" id="L18">    ErrorData errorData = new ErrorData(HttpStatus.INTERNAL_SERVER_ERROR, LocalDateTime.now(),</span>
-<span class="nc" id="L19">            exception.getMessage(), Arrays.toString(exception.getStackTrace()));</span>
-<span class="nc" id="L20">    return new ResponseEntity&lt;&gt;(errorData, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+<span class="fc" id="L18">    ErrorData errorData = new ErrorData(HttpStatus.INTERNAL_SERVER_ERROR, LocalDateTime.now(),</span>
+<span class="fc" id="L19">            exception.getMessage(), Arrays.toString(exception.getStackTrace()));</span>
+<span class="fc" id="L20">    return new ResponseEntity&lt;&gt;(errorData, HttpStatus.INTERNAL_SERVER_ERROR);</span>
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity&lt;ErrorData&gt; handleEntityNotFoundException(EntityNotFoundException entityNotFoundException){
-<span class="nc" id="L25">        ErrorData errorData = new ErrorData(HttpStatus.NO_CONTENT, LocalDateTime.now(),</span>
-<span class="nc" id="L26">                entityNotFoundException.getMessage(), Arrays.toString(entityNotFoundException.getStackTrace()));</span>
-<span class="nc" id="L27">        return new ResponseEntity&lt;&gt;(errorData, HttpStatus.NO_CONTENT);</span>
+<span class="fc" id="L25">        ErrorData errorData = new ErrorData(HttpStatus.NO_CONTENT, LocalDateTime.now(),</span>
+<span class="fc" id="L26">                entityNotFoundException.getMessage(), Arrays.toString(entityNotFoundException.getStackTrace()));</span>
+<span class="fc" id="L27">        return new ResponseEntity&lt;&gt;(errorData, HttpStatus.NO_CONTENT);</span>
     }
 
     @ExceptionHandler(NotEnoughMoneyException.class)
     public ResponseEntity&lt;ErrorData&gt; handleNotEnoughMoneyException(NotEnoughMoneyException notEnoughMoneyException){
-<span class="nc" id="L32">        ErrorData errorData = new ErrorData(HttpStatus.NOT_ACCEPTABLE, LocalDateTime.now(),</span>
-<span class="nc" id="L33">                notEnoughMoneyException.getMessage(), Arrays.toString(notEnoughMoneyException.getStackTrace()));</span>
-<span class="nc" id="L34">        return new ResponseEntity&lt;&gt;(errorData, HttpStatus.NOT_ACCEPTABLE);</span>
+<span class="fc" id="L32">        ErrorData errorData = new ErrorData(HttpStatus.NOT_ACCEPTABLE, LocalDateTime.now(),</span>
+<span class="fc" id="L33">                notEnoughMoneyException.getMessage(), Arrays.toString(notEnoughMoneyException.getStackTrace()));</span>
+<span class="fc" id="L34">        return new ResponseEntity&lt;&gt;(errorData, HttpStatus.NOT_ACCEPTABLE);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

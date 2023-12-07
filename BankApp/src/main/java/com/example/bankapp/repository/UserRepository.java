@@ -13,4 +13,7 @@ import java.util.UUID;
 public interface UserRepository extends JpaRepository<User, UUID> {
     @Query("SELECT u FROM User u WHERE u.email = :email") // двоеточие означает ссылку - значение возьмет из строки снизу
     Optional<User> findByEmail(@Param("email") String email);
+
+    @Query("SELECT u FROM User u WHERE u.id = :uuid AND u.role = 'MANAGER'") // проверка на то, что наш юзер имеет статус менеджера
+    Optional<User> findManagerById(UUID uuid);
 }

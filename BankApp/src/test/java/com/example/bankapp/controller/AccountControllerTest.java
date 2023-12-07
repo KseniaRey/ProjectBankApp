@@ -2,14 +2,11 @@ package com.example.bankapp.controller;
 
 import com.example.bankapp.dto.AccountDto;
 import com.example.bankapp.entity.Account;
-import com.example.bankapp.service.AccountService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -21,7 +18,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -32,11 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 public class AccountControllerTest {
-    @Autowired
-    private AccountController accountController;
 
-    @Autowired
-    private AccountService accountService;
     @Autowired
     private MockMvc mockMvc;
     @Autowired
@@ -51,7 +43,6 @@ public class AccountControllerTest {
         accountDto.setStatus("NEW");
         accountDto.setBalance("20000");
         accountDto.setCurrencyCode("EUR");
-        accountDto.setClientId("c586e826-f384-4c06-b00e-75ff679e732f");
 
         String accountDtoStrindData = objectMapper.writeValueAsString(accountDto);
 
@@ -77,14 +68,17 @@ public class AccountControllerTest {
     @WithUserDetails(value = "alice@example.com")
     public void testGetByProductName() throws Exception {
     List<AccountDto> accountDtoList = new ArrayList<>();
-//    AccountDto accountDto = new AccountDto();
-//    accountDto.setProductName("Mortgage");
-//    accountDto.setOwnerFullName();
-//    accountDto.setName();
-//    accountDto.setProductName();
-//    accountDto.getId();
-//
-//    accountDtoList.add(accountDto);
+        AccountDto accountDto = new AccountDto();
+        accountDto.setId("a16b4e7d-8a29-4327-b79c-4f6b21410d12");
+        accountDto.setName("Debit Account");
+        accountDto.setType("TRAVEL");
+        accountDto.setStatus("ACTIVE");
+        accountDto.setBalance("5000.00");
+        accountDto.setCurrencyCode("USD");
+        accountDto.setProductName("Mortgage");
+        accountDto.setOwnerFullName("Amisha Smith");
+
+    accountDtoList.add(accountDto);
 
     String getProductResult = mockMvc.perform(MockMvcRequestBuilders
                     .get("/account/get-by-productName")
@@ -99,4 +93,6 @@ public class AccountControllerTest {
     });
     Assertions.assertEquals(accountDtoList, actualListDto);
     }
+
+
 }

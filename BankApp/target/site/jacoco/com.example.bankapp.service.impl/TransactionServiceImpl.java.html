@@ -22,7 +22,7 @@ import java.util.UUID;
 public class TransactionServiceImpl implements TransactionService {
     private final TransactionRepository transactionRepository;
     private final TransactionMapper transactionMapper;
-    private final AccountRepository accountRepository; // репо счетов
+    private final AccountRepository accountRepository;
 
 <span class="fc" id="L27">    public TransactionServiceImpl(TransactionRepository transactionRepository, TransactionMapper transactionMapper, AccountRepository accountRepository) {</span>
 <span class="fc" id="L28">        this.transactionRepository = transactionRepository;</span>
@@ -33,47 +33,47 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     @Transactional
     public List&lt;TransactionDto&gt; getTransactionByType(String type) {
-<span class="nc" id="L36">        List&lt;Transaction&gt; transactions = transactionRepository.findByType(TransactionType.valueOf(type));</span>
-<span class="nc" id="L37">        List&lt;TransactionDto&gt; transactionsDto = transactionMapper.transactonsToTransactionsDTO(transactions);</span>
-<span class="nc" id="L38">        return transactionsDto;</span>
+<span class="fc" id="L36">        List&lt;Transaction&gt; transactions = transactionRepository.findByType(TransactionType.valueOf(type));</span>
+<span class="fc" id="L37">        List&lt;TransactionDto&gt; transactionsDto = transactionMapper.transactonsToTransactionsDTO(transactions);</span>
+<span class="fc" id="L38">        return transactionsDto;</span>
     }
 
     @Override
     @Transactional
     public TransactionDto createTransaction(TransactionDto transactionDto) {
-<span class="nc" id="L44">        Transaction transaction = transactionMapper.toTransactionEntity(transactionDto); // получаем объект транзакции с методами, которые прописывали в маппере</span>
-<span class="nc" id="L45">        Account debitAccount = updateDebitAccount(transactionDto, transaction);</span>
-<span class="nc" id="L46">        Account creditAccount = updateCreditAccount(transactionDto, transaction);</span>
-<span class="nc" id="L47">        transaction.setDebitAccount(debitAccount);</span>
-<span class="nc" id="L48">        transaction.setCreditAccount(creditAccount);</span>
-<span class="nc" id="L49">        transaction.setCreatedAt(LocalDateTime.now());</span>
-<span class="nc" id="L50">        transactionRepository.save(transaction);</span>
-<span class="nc" id="L51">        return transactionMapper.toTransactionDto(transaction);</span>
+<span class="fc" id="L44">        Transaction transaction = transactionMapper.toTransactionEntity(transactionDto);</span>
+<span class="fc" id="L45">        Account debitAccount = updateDebitAccount(transactionDto, transaction);</span>
+<span class="fc" id="L46">        Account creditAccount = updateCreditAccount(transactionDto, transaction);</span>
+<span class="fc" id="L47">        transaction.setDebitAccount(debitAccount);</span>
+<span class="fc" id="L48">        transaction.setCreditAccount(creditAccount);</span>
+<span class="fc" id="L49">        transaction.setCreatedAt(LocalDateTime.now());</span>
+<span class="fc" id="L50">        transactionRepository.save(transaction);</span>
+<span class="fc" id="L51">        return transactionMapper.toTransactionDto(transaction);</span>
     }
-// избавиться от повторяющегося кода в методах внизу - 23.10.23
+
     private Account updateCreditAccount(TransactionDto transactionDto, Transaction transaction) {
-<span class="nc" id="L55">        String creditAccountId = transactionDto.getCreditAccountId();</span>
-<span class="nc" id="L56">        Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId))</span>
-<span class="nc" id="L57">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;Account entity is not found&quot;));</span>
-<span class="nc" id="L58">        BigDecimal creditBalance = creditAccount.getBalance().add(transaction.getAmount());</span>
-<span class="nc" id="L59">        creditAccount.setBalance(creditBalance);</span>
-<span class="nc" id="L60">        creditAccount.setUpdatedAt(LocalDateTime.now()); // задаем время обновления</span>
-<span class="nc" id="L61">        accountRepository.save(creditAccount);</span>
-<span class="nc" id="L62">        return creditAccount;</span>
+<span class="fc" id="L55">        String creditAccountId = transactionDto.getCreditAccountId();</span>
+<span class="fc" id="L56">        Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId))</span>
+<span class="pc" id="L57">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;Account entity is not found&quot;));</span>
+<span class="fc" id="L58">        BigDecimal creditBalance = creditAccount.getBalance().add(transaction.getAmount());</span>
+<span class="fc" id="L59">        creditAccount.setBalance(creditBalance);</span>
+<span class="fc" id="L60">        creditAccount.setUpdatedAt(LocalDateTime.now());</span>
+<span class="fc" id="L61">        accountRepository.save(creditAccount);</span>
+<span class="fc" id="L62">        return creditAccount;</span>
     }
 
     private Account updateDebitAccount(TransactionDto transactionDto, Transaction transaction) {
-<span class="nc" id="L66">        String debitAccountId = transactionDto.getDebitAccountId();</span>
-<span class="nc" id="L67">        Account debitAccount = accountRepository.findById(UUID.fromString(debitAccountId))</span>
-<span class="nc" id="L68">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;Debit Account is null&quot;));</span>
-<span class="nc bnc" id="L69" title="All 2 branches missed.">        if (debitAccount.getBalance().compareTo(transaction.getAmount()) &lt; 0) {</span>
-<span class="nc" id="L70">            throw new NotEnoughMoneyException(&quot;Not enough money&quot;);</span>
+<span class="fc" id="L66">        String debitAccountId = transactionDto.getDebitAccountId();</span>
+<span class="fc" id="L67">        Account debitAccount = accountRepository.findById(UUID.fromString(debitAccountId))</span>
+<span class="pc" id="L68">                .orElseThrow(() -&gt; new EntityNotFoundException(&quot;Debit Account is null&quot;));</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">        if (debitAccount.getBalance().compareTo(transaction.getAmount()) &lt; 0) {</span>
+<span class="fc" id="L70">            throw new NotEnoughMoneyException(&quot;Not enough money&quot;);</span>
         }
-<span class="nc" id="L72">        BigDecimal debitBalance = debitAccount.getBalance().subtract(transaction.getAmount());</span>
-<span class="nc" id="L73">        debitAccount.setBalance(debitBalance);</span>
-<span class="nc" id="L74">        debitAccount.setUpdatedAt(LocalDateTime.now());</span>
-<span class="nc" id="L75">        accountRepository.save(debitAccount);</span>
-<span class="nc" id="L76">        return debitAccount;</span>
+<span class="fc" id="L72">        BigDecimal debitBalance = debitAccount.getBalance().subtract(transaction.getAmount());</span>
+<span class="fc" id="L73">        debitAccount.setBalance(debitBalance);</span>
+<span class="fc" id="L74">        debitAccount.setUpdatedAt(LocalDateTime.now());</span>
+<span class="fc" id="L75">        accountRepository.save(debitAccount);</span>
+<span class="fc" id="L76">        return debitAccount;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

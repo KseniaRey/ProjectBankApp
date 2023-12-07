@@ -2,8 +2,8 @@ package com.example.bankapp.controller;
 
 import com.example.bankapp.dto.AccountDto;
 import com.example.bankapp.service.AccountService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -18,14 +18,19 @@ public class AccountController {
         this.accountService = accountService;
     }
     @PostMapping("/create")
-//    @PreAuthorize("hasAuthority('MANAGER')") // - для проверки работы секьюрити. Доступ только менеджеру
     public ResponseEntity<AccountDto> createAccount(@RequestBody AccountDto accountDto){
         AccountDto result = accountService.createAccount(accountDto);
         return ResponseEntity.created(URI.create("/" + result.getId())).body(result);
     }
 
+    @Operation(summary = "Get Accounts by product name")
     @GetMapping("/get-by-productName")
     public List<AccountDto> getByProductName(@RequestParam(name = "productName") String productName){
         return accountService.getByProductName(productName);
+    }
+
+    @GetMapping("/{id}")
+    public AccountDto getAccountById(@PathVariable(name = "id") String accountId){
+        return accountService.getById(accountId);
     }
 }

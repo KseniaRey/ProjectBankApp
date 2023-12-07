@@ -29,14 +29,14 @@ public class Transaction {
     @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
     private Account creditAccount;
 
-    @Column(name = "transaction_type") // enum
+    @Column(name = "type") // enum
     @Enumerated(EnumType.STRING)
     private TransactionType type;
 
-    @Column(name = "transaction_amount")
+    @Column(name = "amount")
     private BigDecimal amount;
 
-    @Column(name = "transaction_description")
+    @Column(name = "description")
     private String description;
 
     @Column(name = "created_at")

@@ -1,8 +1,8 @@
 package com.example.bankapp.controller;
 
 import com.example.bankapp.dto.TransactionDto;
-import com.example.bankapp.entity.Transaction;
 import com.example.bankapp.service.TransactionService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +20,7 @@ public class                                                                    
         return transactionService.getTransactionByType(type);
     }
     @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
     public TransactionDto createTransaction(@RequestBody TransactionDto transactionDto){
         return transactionService.createTransaction(transactionDto);
     }

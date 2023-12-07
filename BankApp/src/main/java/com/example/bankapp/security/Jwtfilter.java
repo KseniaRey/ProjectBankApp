@@ -1,14 +1,11 @@
 package com.example.bankapp.security;
 
-import com.example.bankapp.entity.security.CustomUserDetails;
-import com.example.bankapp.service.security.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,7 +16,7 @@ import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.util.StringUtils.hasText;
 
 @Component
-public class Jwtfilter extends GenericFilterBean { // начинаем с него
+public class Jwtfilter extends GenericFilterBean {
     private final CustomUserDetailsService userDetailsService;
     private final Jwtprovider jwtprovider;
 

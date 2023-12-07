@@ -37,12 +37,9 @@ public class Agreement {
     @JoinColumn(name = "manager_id", referencedColumnName = "id")
     private User manager;
 
-    @Column(name = "interest_rate")
-    private double interestRate;
-
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    private AgreementStatus status; // Enum
+    private AgreementStatus status;
 
     @Column(name = "sum")
     private BigDecimal sum;

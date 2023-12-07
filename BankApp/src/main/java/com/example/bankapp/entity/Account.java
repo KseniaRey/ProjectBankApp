@@ -3,9 +3,11 @@ package com.example.bankapp.entity;
 import com.example.bankapp.enums.AccountType;
 import com.example.bankapp.enums.Currency;
 import com.example.bankapp.enums.Status;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,8 +15,6 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
-
-import static jakarta.persistence.CascadeType.*;
 
 @Entity
 @Table(name = "accounts")
@@ -29,18 +29,18 @@ public class Account {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "account_name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "account_type")
+    @Column(name = "type")
     @Enumerated(EnumType.STRING)
     private AccountType type;
 
-    @Column(name = "account_status")
+    @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @Column(name = "account_balance")
+    @Column(name = "balance")
     private BigDecimal balance;
 
     @Column(name = "currency_code")
@@ -53,20 +53,16 @@ public class Account {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     private User client;
 
     @OneToMany(mappedBy = "debitAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
     private Set<Transaction> debitTransactions = new HashSet<>();
 
-    @JsonIgnore
     @OneToMany(mappedBy = "creditAccount", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Transaction> creditTransactions = new HashSet<>();
 
-    @JsonIgnore
     @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Agreement agreement;
 

@@ -8,4 +8,6 @@ public interface AccountService{
     AccountDto createAccount(AccountDto accountDto);
 
     List<AccountDto> getByProductName(String productName);
+
+    AccountDto getById(String accountId);
 }

@@ -22,7 +22,7 @@ import java.util.UUID;
 public class TransactionServiceImpl implements TransactionService {
     private final TransactionRepository transactionRepository;
     private final TransactionMapper transactionMapper;
-    private final AccountRepository accountRepository; // репо счетов
+    private final AccountRepository accountRepository;
 
     public TransactionServiceImpl(TransactionRepository transactionRepository, TransactionMapper transactionMapper, AccountRepository accountRepository) {
         this.transactionRepository = transactionRepository;
@@ -41,7 +41,7 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     @Transactional
     public TransactionDto createTransaction(TransactionDto transactionDto) {
-        Transaction transaction = transactionMapper.toTransactionEntity(transactionDto); // получаем объект транзакции с методами, которые прописывали в маппере
+        Transaction transaction = transactionMapper.toTransactionEntity(transactionDto);
         Account debitAccount = updateDebitAccount(transactionDto, transaction);
         Account creditAccount = updateCreditAccount(transactionDto, transaction);
         transaction.setDebitAccount(debitAccount);
@@ -50,14 +50,14 @@ public class TransactionServiceImpl implements TransactionService {
         transactionRepository.save(transaction);
         return transactionMapper.toTransactionDto(transaction);
     }
-// избавиться от повторяющегося кода в методах внизу - 23.10.23
+
     private Account updateCreditAccount(TransactionDto transactionDto, Transaction transaction) {
         String creditAccountId = transactionDto.getCreditAccountId();
         Account creditAccount = accountRepository.findById(UUID.fromString(creditAccountId))
                 .orElseThrow(() -> new EntityNotFoundException("Account entity is not found"));
         BigDecimal creditBalance = creditAccount.getBalance().add(transaction.getAmount());
         creditAccount.setBalance(creditBalance);
-        creditAccount.setUpdatedAt(LocalDateTime.now()); // задаем время обновления
+        creditAccount.setUpdatedAt(LocalDateTime.now());
         accountRepository.save(creditAccount);
         return creditAccount;
     }

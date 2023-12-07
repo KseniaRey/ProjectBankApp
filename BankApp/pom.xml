@@ -100,9 +100,16 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>2.1.210</version>
+			<version>2.2.224</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
 		<!-- Security -->
 <!--		<dependency>-->
 <!--			<groupId>org.springframework.security</groupId>-->
@@ -184,6 +191,7 @@
 						<exclude>com/**/entity/**</exclude>
 						<exclude>com/**/security/*</exclude>
 						<exclude>com/**/exceptions/*</exclude>
+						<exclude>com/**/BankAppApplication.class</exclude>
 					</excludes>
 					<destFile>${project.build.directory}/jacoco.exec</destFile>
 				</configuration>

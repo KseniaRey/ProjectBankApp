@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS users
 (
     id         UUID PRIMARY KEY,
-    user_role     varchar(20),
+    role       varchar(20),
     status     varchar(20),
     tax_code    varchar(20),
     password   varchar(60),
@@ -17,11 +17,11 @@ CREATE TABLE IF NOT EXISTS users
 CREATE TABLE IF NOT EXISTS products
 (
     id            INT PRIMARY KEY AUTO_INCREMENT,
-    product_name          varchar(70),
+    name          varchar(70),
     status        varchar(20),
     interest_rate decimal(6, 4),
-    product_currency_code varchar(3),
-    product_limit int,
+    currency_code varchar(3),
+    min_limit     int,
     created_at    TIMESTAMP,
     updated_at    TIMESTAMP
     );
@@ -30,10 +30,10 @@ CREATE TABLE IF NOT EXISTS accounts
 (
     id            UUID PRIMARY KEY,
     client_id     UUID,
-    account_name        varchar(28) UNIQUE,
-    account_type  varchar(20),
-    account_status        varchar(20),
-    account_balance       decimal(15, 2),
+    name        varchar(28) UNIQUE,
+    type  varchar(20),
+    status        varchar(20),
+    balance       decimal(15, 2),
     currency_code varchar(3),
     created_at    TIMESTAMP,
     updated_at    TIMESTAMP,
@@ -47,7 +47,6 @@ CREATE TABLE IF NOT EXISTS agreements
     product_id    int,
     manager_id    UUID,
     status        varchar(20),
-    interest_rate decimal(15, 2),
     sum           decimal(15, 2),
     created_at    TIMESTAMP,
     updated_at    TIMESTAMP,

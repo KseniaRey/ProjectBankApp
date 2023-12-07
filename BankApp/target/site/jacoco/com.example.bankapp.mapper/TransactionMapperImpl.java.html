@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
-    date = &quot;2023-11-03T14:52:16+0100&quot;,
+    date = &quot;2023-12-06T22:40:20+0100&quot;,
     comments = &quot;version: 1.5.5.Final, compiler: javac, environment: Java 19.0.2 (Oracle Corporation)&quot;
 )
 @Component
@@ -22,96 +22,96 @@ import org.springframework.stereotype.Component;
 
     @Override
     public TransactionDto toTransactionDto(Transaction transaction) {
-<span class="nc bnc" id="L25" title="All 2 branches missed.">        if ( transaction == null ) {</span>
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        if ( transaction == null ) {</span>
 <span class="nc" id="L26">            return null;</span>
         }
 
-<span class="nc" id="L29">        TransactionDto transactionDto = new TransactionDto();</span>
+<span class="fc" id="L29">        TransactionDto transactionDto = new TransactionDto();</span>
 
-<span class="nc" id="L31">        transactionDto.setDebitAccountId( uuidToString( transactionDebitAccountId( transaction ) ) );</span>
-<span class="nc" id="L32">        transactionDto.setCreditAccountId( uuidToString( transactionCreditAccountId( transaction ) ) );</span>
-<span class="nc bnc" id="L33" title="All 2 branches missed.">        if ( transaction.getId() != null ) {</span>
-<span class="nc" id="L34">            transactionDto.setId( transaction.getId().toString() );</span>
+<span class="fc" id="L31">        transactionDto.setDebitAccountId( uuidToString( transactionDebitAccountId( transaction ) ) );</span>
+<span class="fc" id="L32">        transactionDto.setCreditAccountId( uuidToString( transactionCreditAccountId( transaction ) ) );</span>
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">        if ( transaction.getId() != null ) {</span>
+<span class="fc" id="L34">            transactionDto.setId( transaction.getId().toString() );</span>
         }
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        if ( transaction.getType() != null ) {</span>
-<span class="nc" id="L37">            transactionDto.setType( transaction.getType().name() );</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">        if ( transaction.getType() != null ) {</span>
+<span class="fc" id="L37">            transactionDto.setType( transaction.getType().name() );</span>
         }
-<span class="nc bnc" id="L39" title="All 2 branches missed.">        if ( transaction.getAmount() != null ) {</span>
-<span class="nc" id="L40">            transactionDto.setAmount( transaction.getAmount().toString() );</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        if ( transaction.getAmount() != null ) {</span>
+<span class="fc" id="L40">            transactionDto.setAmount( transaction.getAmount().toString() );</span>
         }
-<span class="nc" id="L42">        transactionDto.setDescription( transaction.getDescription() );</span>
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        if ( transaction.getCreatedAt() != null ) {</span>
-<span class="nc" id="L44">            transactionDto.setCreatedAt( DateTimeFormatter.ISO_LOCAL_DATE_TIME.format( transaction.getCreatedAt() ) );</span>
+<span class="fc" id="L42">        transactionDto.setDescription( transaction.getDescription() );</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if ( transaction.getCreatedAt() != null ) {</span>
+<span class="fc" id="L44">            transactionDto.setCreatedAt( DateTimeFormatter.ISO_LOCAL_DATE_TIME.format( transaction.getCreatedAt() ) );</span>
         }
 
-<span class="nc" id="L47">        return transactionDto;</span>
+<span class="fc" id="L47">        return transactionDto;</span>
     }
 
     @Override
     public Transaction toTransactionEntity(TransactionDto transactionDto) {
-<span class="nc bnc" id="L52" title="All 2 branches missed.">        if ( transactionDto == null ) {</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">        if ( transactionDto == null ) {</span>
 <span class="nc" id="L53">            return null;</span>
         }
 
-<span class="nc" id="L56">        Transaction transaction = new Transaction();</span>
+<span class="fc" id="L56">        Transaction transaction = new Transaction();</span>
 
-<span class="nc" id="L58">        transaction.setAmount( stringToBigDecimal( transactionDto.getAmount() ) );</span>
-<span class="nc bnc" id="L59" title="All 2 branches missed.">        if ( transactionDto.getType() != null ) {</span>
-<span class="nc" id="L60">            transaction.setType( Enum.valueOf( TransactionType.class, stringToEnumValue( transactionDto.getType() ) ) );</span>
+<span class="fc" id="L58">        transaction.setAmount( stringToBigDecimal( transactionDto.getAmount() ) );</span>
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if ( transactionDto.getType() != null ) {</span>
+<span class="fc" id="L60">            transaction.setType( Enum.valueOf( TransactionType.class, stringToEnumValue( transactionDto.getType() ) ) );</span>
         }
-<span class="nc bnc" id="L62" title="All 2 branches missed.">        if ( transactionDto.getId() != null ) {</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if ( transactionDto.getId() != null ) {</span>
 <span class="nc" id="L63">            transaction.setId( UUID.fromString( transactionDto.getId() ) );</span>
         }
-<span class="nc" id="L65">        transaction.setDescription( transactionDto.getDescription() );</span>
-<span class="nc bnc" id="L66" title="All 2 branches missed.">        if ( transactionDto.getCreatedAt() != null ) {</span>
+<span class="fc" id="L65">        transaction.setDescription( transactionDto.getDescription() );</span>
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        if ( transactionDto.getCreatedAt() != null ) {</span>
 <span class="nc" id="L67">            transaction.setCreatedAt( LocalDateTime.parse( transactionDto.getCreatedAt() ) );</span>
         }
 
-<span class="nc" id="L70">        return transaction;</span>
+<span class="fc" id="L70">        return transaction;</span>
     }
 
     @Override
     public List&lt;TransactionDto&gt; transactonsToTransactionsDTO(List&lt;Transaction&gt; transactions) {
-<span class="nc bnc" id="L75" title="All 2 branches missed.">        if ( transactions == null ) {</span>
+<span class="pc bpc" id="L75" title="1 of 2 branches missed.">        if ( transactions == null ) {</span>
 <span class="nc" id="L76">            return null;</span>
         }
 
-<span class="nc" id="L79">        List&lt;TransactionDto&gt; list = new ArrayList&lt;TransactionDto&gt;( transactions.size() );</span>
-<span class="nc bnc" id="L80" title="All 2 branches missed.">        for ( Transaction transaction : transactions ) {</span>
-<span class="nc" id="L81">            list.add( toTransactionDto( transaction ) );</span>
-<span class="nc" id="L82">        }</span>
+<span class="fc" id="L79">        List&lt;TransactionDto&gt; list = new ArrayList&lt;TransactionDto&gt;( transactions.size() );</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        for ( Transaction transaction : transactions ) {</span>
+<span class="fc" id="L81">            list.add( toTransactionDto( transaction ) );</span>
+<span class="fc" id="L82">        }</span>
 
-<span class="nc" id="L84">        return list;</span>
+<span class="fc" id="L84">        return list;</span>
     }
 
     private UUID transactionDebitAccountId(Transaction transaction) {
-<span class="nc bnc" id="L88" title="All 2 branches missed.">        if ( transaction == null ) {</span>
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">        if ( transaction == null ) {</span>
 <span class="nc" id="L89">            return null;</span>
         }
-<span class="nc" id="L91">        Account debitAccount = transaction.getDebitAccount();</span>
-<span class="nc bnc" id="L92" title="All 2 branches missed.">        if ( debitAccount == null ) {</span>
+<span class="fc" id="L91">        Account debitAccount = transaction.getDebitAccount();</span>
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        if ( debitAccount == null ) {</span>
 <span class="nc" id="L93">            return null;</span>
         }
-<span class="nc" id="L95">        UUID id = debitAccount.getId();</span>
-<span class="nc bnc" id="L96" title="All 2 branches missed.">        if ( id == null ) {</span>
+<span class="fc" id="L95">        UUID id = debitAccount.getId();</span>
+<span class="pc bpc" id="L96" title="1 of 2 branches missed.">        if ( id == null ) {</span>
 <span class="nc" id="L97">            return null;</span>
         }
-<span class="nc" id="L99">        return id;</span>
+<span class="fc" id="L99">        return id;</span>
     }
 
     private UUID transactionCreditAccountId(Transaction transaction) {
-<span class="nc bnc" id="L103" title="All 2 branches missed.">        if ( transaction == null ) {</span>
+<span class="pc bpc" id="L103" title="1 of 2 branches missed.">        if ( transaction == null ) {</span>
 <span class="nc" id="L104">            return null;</span>
         }
-<span class="nc" id="L106">        Account creditAccount = transaction.getCreditAccount();</span>
-<span class="nc bnc" id="L107" title="All 2 branches missed.">        if ( creditAccount == null ) {</span>
+<span class="fc" id="L106">        Account creditAccount = transaction.getCreditAccount();</span>
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">        if ( creditAccount == null ) {</span>
 <span class="nc" id="L108">            return null;</span>
         }
-<span class="nc" id="L110">        UUID id = creditAccount.getId();</span>
-<span class="nc bnc" id="L111" title="All 2 branches missed.">        if ( id == null ) {</span>
+<span class="fc" id="L110">        UUID id = creditAccount.getId();</span>
+<span class="pc bpc" id="L111" title="1 of 2 branches missed.">        if ( id == null ) {</span>
 <span class="nc" id="L112">            return null;</span>
         }
-<span class="nc" id="L114">        return id;</span>
+<span class="fc" id="L114">        return id;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

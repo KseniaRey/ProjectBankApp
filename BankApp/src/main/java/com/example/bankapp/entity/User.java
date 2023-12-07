@@ -51,7 +51,7 @@ public class User {
     private String phone;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "user_role")
+    @Column(name = "role")
     private UserRole role;
 
     @Column(name = "created_at")

@@ -1,1 +1,8 @@
+com\example\bankapp\controller\AccountControllerTest$1.class
+com\example\bankapp\controller\AuthControllerTest.class
+com\example\bankapp\controller\AgreementControllerTest.class
+com\example\bankapp\controller\UserControllerTest.class
+com\example\bankapp\controller\ProductControllerTest.class
 com\example\bankapp\controller\AccountControllerTest.class
+com\example\bankapp\controller\TransactionControllerTest.class
+com\example\bankapp\controller\TransactionControllerTest$1.class

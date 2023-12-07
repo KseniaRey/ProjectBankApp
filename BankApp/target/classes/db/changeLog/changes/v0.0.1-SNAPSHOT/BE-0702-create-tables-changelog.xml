@@ -40,7 +40,7 @@
             <column name="phone" type="varchar(30)">
                 <constraints nullable="false"/>
             </column>
-            <column name="user_role" type="varchar(30)">
+            <column name="role" type="varchar(30)">
                 <constraints nullable="false"/>
             </column>
             <column name="created_at" type="timestamp">
@@ -62,19 +62,19 @@
         <column name="id" type="integer">
             <constraints primaryKey="true" unique="true" nullable="false"/>
         </column>
-        <column name="product_name" type="varchar(30)">
+        <column name="name" type="varchar(30)">
             <constraints nullable="false"/>
         </column>
-        <column name="product_status" type="varchar(30)">
+        <column name="status" type="varchar(30)">
             <constraints nullable="false"/>
         </column>
-        <column name="product_currency_code" type="varchar(3)">
+        <column name="currency_code" type="varchar(3)">
             <constraints nullable="false"/>
         </column>
         <column name="interest_rate" type="numeric(6,4)">
             <constraints nullable="false"/>
         </column>
-        <column name="product_limit" type="integer">
+        <column name="min_limit" type="integer">
             <constraints nullable="false"/>
         </column>
         <column name="created_at" type="timestamp">
@@ -96,16 +96,16 @@
         <column name="id" type="binary(16)">
             <constraints primaryKey="true" unique="true" nullable="false"/>
         </column>
-        <column name="account_name" type="varchar(30)">
+        <column name="name" type="varchar(30)">
             <constraints nullable="false"/>
         </column>
-        <column name="account_type" type="varchar(30)">
+        <column name="type" type="varchar(30)">
             <constraints nullable="false"/>
         </column>
-        <column name="account_status" type="varchar(30)">
+        <column name="status" type="varchar(30)">
             <constraints nullable="false"/>
         </column>
-        <column name="account_balance" type="numeric(19, 4)">
+        <column name="balance" type="numeric(19, 4)">
             <constraints nullable="false"/>
         </column>
         <column name="currency_code" type="varchar(3)">
@@ -143,9 +143,6 @@
         <column name="manager_id" type="binary(16)">
             <constraints foreignKeyName="manager_id" references="users(id)" nullable="false"/>
         </column>
-        <column name="interest_rate" type="numeric(6,4)">
-            <constraints nullable="false"/>
-        </column>
         <column name="status" type="varchar(30)">
             <constraints nullable="false"/>
         </column>
@@ -177,13 +174,13 @@
         <column name="credit_account_id" type="binary(16)">
             <constraints foreignKeyName="credit_account_id" references="accounts(id)" nullable="false"/>
         </column>
-        <column name="transaction_type" type="varchar(30)">
+        <column name="type" type="varchar(30)">
             <constraints nullable="false"/>
         </column>
-        <column name="transaction_amount" type="decimal(12, 4)">
+        <column name="amount" type="decimal(12, 4)">
             <constraints nullable="false"/>
         </column>
-        <column name="transaction_description" type="varchar(200)">
+        <column name="description" type="varchar(200)">
             <constraints nullable="false"/>
         </column>
         <column name="created_at" type="timestamp">

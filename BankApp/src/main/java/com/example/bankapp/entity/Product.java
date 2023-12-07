@@ -2,7 +2,6 @@ package com.example.bankapp.entity;
 
 import com.example.bankapp.enums.Currency;
 import com.example.bankapp.enums.Status;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,7 +11,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import static jakarta.persistence.CascadeType.*;
+import static jakarta.persistence.CascadeType.ALL;
 
 @Entity
 @Table(name = "products")
@@ -27,22 +26,22 @@ public class Product {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "product_name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "product_status")
+    @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @Column(name = "product_currency_code")
+    @Column(name = "currency_code")
     @Enumerated(EnumType.STRING)
     private Currency currencyCode;
 
     @Column(name = "interest_rate")
     private BigDecimal interestRate;
 
-    @Column(name = "product_limit")
-    private Integer limit;
+    @Column(name = "min_limit")
+    private Integer minLimit;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -50,7 +49,6 @@ public class Product {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "product", cascade = ALL, fetch = FetchType.LAZY)
     private Set<Agreement> agreements = new HashSet<>();
 
@@ -58,7 +56,7 @@ public class Product {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Product product)) return false;
-        return id == product.id && Objects.equals(name, product.name);
+        return Objects.equals(id, product.id) && Objects.equals(name, product.name);
     }
 
     @Override

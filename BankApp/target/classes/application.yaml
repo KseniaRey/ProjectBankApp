@@ -19,3 +19,5 @@ spring:
     drop-first: true
 server:
   port: 8080
+jwt:
+  secret: ${key}

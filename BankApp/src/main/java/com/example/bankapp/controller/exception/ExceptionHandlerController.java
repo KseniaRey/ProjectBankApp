@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 @RestControllerAdvice
 public class ExceptionHandlerController {
-    @ExceptionHandler(RuntimeException.class) // обязательно указать тип ошибки
+    @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ErrorData> handleRuntimeException(RuntimeException exception){
     ErrorData errorData = new ErrorData(HttpStatus.INTERNAL_SERVER_ERROR, LocalDateTime.now(),
             exception.getMessage(), Arrays.toString(exception.getStackTrace()));

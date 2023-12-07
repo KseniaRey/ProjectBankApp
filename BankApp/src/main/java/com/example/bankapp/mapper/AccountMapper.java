@@ -10,12 +10,10 @@ import org.mapstruct.Named;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
 
 @Mapper(componentModel = "spring")
 public interface AccountMapper {
     @Named("toAccountDto")
-    @Mapping(source = "client.id", target = "clientId")
     @Mapping(source = "id", target = "id")
     @Mapping(source = "agreement.product.name", target = "productName")
     @Mapping(source = "client", target = "ownerFullName", qualifiedByName = "getFullName")

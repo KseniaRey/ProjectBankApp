@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BankApp</a> &gt; <a href="index.source.html" class="el_package">com.example.bankapp.controller</a> &gt; <span class="el_source">UserController.java</span></div><h1>UserController.java</h1><pre class="source lang-java linenums">package com.example.bankapp.controller;
 
+import com.example.bankapp.dto.UserDto;
 import com.example.bankapp.service.UserService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -10,12 +12,18 @@ import java.util.UUID;
 public class UserController {
     private final UserService userService;
 
-<span class="fc" id="L13">    public UserController(UserService userService) {</span>
-<span class="fc" id="L14">        this.userService = userService;</span>
-<span class="fc" id="L15">    }</span>
-    @DeleteMapping(path = &quot;/delete&quot;)
-    public void deleteUserById(@RequestParam UUID id){
-<span class="nc" id="L18">        userService.deleteById(id);</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L15">    public UserController(UserService userService) {</span>
+<span class="fc" id="L16">        this.userService = userService;</span>
+<span class="fc" id="L17">    }</span>
+    @DeleteMapping(path = &quot;/{id}&quot;)
+    @PreAuthorize(&quot;hasAuthority('MANAGER')&quot;)
+    public void deleteUserById(@PathVariable UUID id){
+<span class="fc" id="L21">        userService.deleteById(id);</span>
+<span class="fc" id="L22">    }</span>
+
+    @GetMapping(path = &quot;/{id}&quot;)
+    public UserDto getUserById(@PathVariable UUID id){
+<span class="fc" id="L26">        return userService.getUserById(id);</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

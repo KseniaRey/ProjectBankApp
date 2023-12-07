@@ -10,12 +10,10 @@ import org.mapstruct.Named;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
 
 @Mapper(componentModel = &quot;spring&quot;)
 public interface AccountMapper {
     @Named(&quot;toAccountDto&quot;)
-    @Mapping(source = &quot;client.id&quot;, target = &quot;clientId&quot;)
     @Mapping(source = &quot;id&quot;, target = &quot;id&quot;)
     @Mapping(source = &quot;agreement.product.name&quot;, target = &quot;productName&quot;)
     @Mapping(source = &quot;client&quot;, target = &quot;ownerFullName&quot;, qualifiedByName = &quot;getFullName&quot;)
@@ -32,17 +30,17 @@ public interface AccountMapper {
 
     @Named(&quot;stringToEnumValue&quot;) // дублирование кода из transactionMapper - можем ли тут сделать через use чтобы использовать методы транзакшн маппера?
     default String stringToEnumValue(String s){
-<span class="fc" id="L35">        return s.toUpperCase().replaceAll(&quot;\\s&quot;, &quot;_&quot;);</span>
+<span class="fc" id="L33">        return s.toUpperCase().replaceAll(&quot;\\s&quot;, &quot;_&quot;);</span>
     }
 
     @Named(&quot;stringToBigDecimal&quot;)
     default BigDecimal stringToBigDecimal(String s) {
-<span class="fc" id="L40">        return new BigDecimal(s);</span>
+<span class="fc" id="L38">        return new BigDecimal(s);</span>
     }
     
     @Named(&quot;getFullName&quot;)
     default String getFullName(User user){
-<span class="fc" id="L45">        return user.getFirstName() + &quot; &quot; + user.getLastName();</span>
+<span class="fc" id="L43">        return user.getFirstName() + &quot; &quot; + user.getLastName();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

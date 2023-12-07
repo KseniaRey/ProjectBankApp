@@ -2,8 +2,8 @@
 
 import com.example.bankapp.dto.AccountDto;
 import com.example.bankapp.service.AccountService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -18,15 +18,20 @@ public class AccountController {
 <span class="fc" id="L18">        this.accountService = accountService;</span>
 <span class="fc" id="L19">    }</span>
     @PostMapping(&quot;/create&quot;)
-//    @PreAuthorize(&quot;hasAuthority('MANAGER')&quot;) // - для проверки работы секьюрити. Доступ только менеджеру
     public ResponseEntity&lt;AccountDto&gt; createAccount(@RequestBody AccountDto accountDto){
-<span class="fc" id="L23">        AccountDto result = accountService.createAccount(accountDto);</span>
-<span class="fc" id="L24">        return ResponseEntity.created(URI.create(&quot;/&quot; + result.getId())).body(result);</span>
+<span class="fc" id="L22">        AccountDto result = accountService.createAccount(accountDto);</span>
+<span class="fc" id="L23">        return ResponseEntity.created(URI.create(&quot;/&quot; + result.getId())).body(result);</span>
     }
 
+    @Operation(summary = &quot;Get Accounts by product name&quot;)
     @GetMapping(&quot;/get-by-productName&quot;)
     public List&lt;AccountDto&gt; getByProductName(@RequestParam(name = &quot;productName&quot;) String productName){
-<span class="nc" id="L29">        return accountService.getByProductName(productName);</span>
+<span class="fc" id="L29">        return accountService.getByProductName(productName);</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public AccountDto getAccountById(@PathVariable(name = &quot;id&quot;) String accountId){
+<span class="fc" id="L34">        return accountService.getById(accountId);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

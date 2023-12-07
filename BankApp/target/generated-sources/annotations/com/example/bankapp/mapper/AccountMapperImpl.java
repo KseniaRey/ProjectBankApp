@@ -4,7 +4,6 @@ import com.example.bankapp.dto.AccountDto;
 import com.example.bankapp.entity.Account;
 import com.example.bankapp.entity.Agreement;
 import com.example.bankapp.entity.Product;
-import com.example.bankapp.entity.User;
 import com.example.bankapp.enums.AccountType;
 import com.example.bankapp.enums.Currency;
 import com.example.bankapp.enums.Status;
@@ -16,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-11-03T14:52:17+0100",
+    date = "2023-12-06T22:40:20+0100",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 19.0.2 (Oracle Corporation)"
 )
 @Component
@@ -30,10 +29,6 @@ public class AccountMapperImpl implements AccountMapper {
 
         AccountDto accountDto = new AccountDto();
 
-        UUID id = accountClientId( account );
-        if ( id != null ) {
-            accountDto.setClientId( id.toString() );
-        }
         if ( account.getId() != null ) {
             accountDto.setId( account.getId().toString() );
         }
@@ -94,21 +89,6 @@ public class AccountMapperImpl implements AccountMapper {
         account.setName( accountDto.getName() );
 
         return account;
-    }
-
-    private UUID accountClientId(Account account) {
-        if ( account == null ) {
-            return null;
-        }
-        User client = account.getClient();
-        if ( client == null ) {
-            return null;
-        }
-        UUID id = client.getId();
-        if ( id == null ) {
-            return null;
-        }
-        return id;
     }
 
     private String accountAgreementProductName(Account account) {

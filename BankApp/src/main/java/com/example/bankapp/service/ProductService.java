@@ -1,7 +1,7 @@
 package com.example.bankapp.service;
 
-import com.example.bankapp.entity.Product;
+import com.example.bankapp.dto.ProductDto;
 
 public interface ProductService {
-    Product getById(int id);
+    ProductDto getById(int id);
 }

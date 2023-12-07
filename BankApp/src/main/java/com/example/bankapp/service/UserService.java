@@ -1,5 +1,6 @@
 package com.example.bankapp.service;
 
+import com.example.bankapp.dto.UserDto;
 import com.example.bankapp.entity.User;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,4 +11,6 @@ public interface UserService {
     void deleteById(UUID id);
 
     User findByEmailAndPassword(String email, String password);
+
+    UserDto getUserById(UUID id);
 }

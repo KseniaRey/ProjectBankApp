@@ -5,6 +5,7 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -15,7 +16,8 @@ import java.util.Date;
 @Component
 public class Jwtprovider { // генерация и валидация токена, 2 на очереди
     private static final Logger LOGGER = LogManager.getLogger(Jwtprovider.class);
-    private final String jwtSecret = "404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970"; // ключ, кодовое слово, с помощью которого будут шифроваться токены
+    @Value("${jwt.secret}")
+    private String jwtSecret; // ключ, кодовое слово, с помощью которого будут шифроваться токены
     public String generateToken(String email) { // принимает логин // генерация токена
         Date date = Date.from(LocalDateTime.now().plusMinutes(15).atZone(ZoneId.systemDefault()).toInstant()); // указываем, сколько наш токен будет валиден
         return Jwts.builder()
